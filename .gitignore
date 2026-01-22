@@ -1,0 +1,17 @@
+# Результаты сборки
+result
+result-*
+
+# Hardware configuration (может содержать специфичные для машины данные)
+# Решишь сам, включать ли его
+# hardware-configuration.nix
+
+# Временные файлы
+*.swp
+*.swo
+*~
+
+# Секреты (если используешь)
+secrets/
+*.age
+*.key
