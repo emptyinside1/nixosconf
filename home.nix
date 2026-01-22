@@ -171,7 +171,9 @@
       core.editor = "nvim";
       pull.rebase = true;
       init.defaultBranch = "main";
-  
+      extraConfig = {
+        credential.helper = "store";  # Сохраняет в ~/.git-credentials
+      }; 
 
       alias = {
         st = "status";
