@@ -15,3 +15,13 @@ result-*
 secrets/
 *.age
 *.key
+dotfiles/.local/share/nvim/lazy/
+dotfiles/.local/share/nvim/lazy/*
+
+# Neovim временные файлы
+dotfiles/.local/share/nvim/
+dotfiles/.local/state/nvim/
+dotfiles/.cache/nvim/
+
+# Исключение: храни только конфигурацию
+!dotfiles/.config/nvim/

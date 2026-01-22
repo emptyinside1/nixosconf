@@ -272,8 +272,8 @@
   };
 
   home.sessionPath = [
-    "$HOME/.local/bin"
-    "$HOME/.cargo/bin"
+    "$HOME/.config/bin"
+    "$HOME/.config/bin"
   ];
 
 
