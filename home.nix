@@ -45,6 +45,19 @@
     nerd-fonts.hack
   ];
   
+  programs.pay-respects = {
+    enable = true;
+    # выберите нужную оболочку
+    enableZshIntegration = true;   # если используете zsh
+    # enableBashIntegration = true;  # если используете bash
+    # enableFishIntegration = false; # и т.д.
+    options = [ "--alias" "f" ];   # как будет называться команда (аналог `thefuck`)
+    # при желании можно передать опции самому pay-respects:
+    # options = [ "--ai" ];
+  };
+
+
+
   programs.zsh = {
     enable = true;
     enableCompletion = true;
