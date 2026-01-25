@@ -20,10 +20,10 @@
     ];
 
   # Bootloader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sda";
-  boot.loader.grub.useOSProber = true;
-  boot.loader.grub.configurationLimit = 3;
+  boot.loader.systemd-boot.enable = true;
+  # boot.loader.efi.canTouchVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.loader.systemd-boot.configurationLimit = 3;
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -71,7 +71,8 @@
 
   # Enable the Cinnamon Desktop Environment.
   services.displayManager.ly.enable = true;
-  #services.xserver.displayManager.lightdm.enable = true;
+  # services.xserver.desktopManager.xfce.enable = true;
+  # services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.cinnamon.enable = true;
 
   # Configure keymap in X11

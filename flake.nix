@@ -12,9 +12,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager }:
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, zen-browser, ... } @inputs:
   let
     # Переменные для удобства
     system = "x86_64-linux";
@@ -30,7 +36,7 @@
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit pkgs-stable; };
+          home-manager.extraSpecialArgs = { inherit pkgs-stable inputs zen-browser; };
           home-manager.users.daniil = import ./home.nix;
         }
 

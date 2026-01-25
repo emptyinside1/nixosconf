@@ -8,22 +8,26 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "uhci_hcd" "ehci_pci" "ata_piix" "ahci" "firewire_ohci" "usb_storage" "sd_mod" "sr_mod" "sdhci_pci" ];
+  boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "uas" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
+  boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/8a4d0ea0-bf5e-4944-8b3a-87ed225aa6a5";
-      fsType = "ext4";
-    };
+  fileSystems."/" = { 
+    device = "/dev/nvme0n1p6";
+    fsType = "ext4";
+  };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/b3acbeef-b41b-41f3-932e-d5bcd963d829"; }
-    ];
+  fileSystems."/boot" = { 
+    device = "/dev/nvme0n1p1";
+    fsType = "vfat";
+    options = [ "fmask=0177" "dmask=0077" ];
+  };
+
+  swapDevices = [ 
+    { device = "/dev/nvme0n1p2"; }
+  ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  # networking.enableIntel3945ABGFirmware = true;
-  hardware.enableRedistributableFirmware = lib.mkDefault true;
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
