@@ -5,17 +5,20 @@
   home.stateVersion = "25.11";
   
   imports = [
-    inputs.zen-browser.homeModules.twilight
     ./home/shell.nix
     ./home/editor.nix
     ./home/git.nix
     ./home/pkgs.nix
     ./home/dotfiles.nix
     ./home/scripts.nix
+    ./home/fastfetch.nix
+    inputs.zen-browser.homeModules.twilight
+
   ];
 
   home.sessionPath = [
     "$HOME/.config/bin"
-    "$HOME/.config/bin"
+    "$HOME/.local/bin"
+    "$HOME/.cargo/bin"
   ];
 }
