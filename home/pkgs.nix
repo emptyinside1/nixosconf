@@ -11,7 +11,7 @@
     qemu
     winboat
     gearlever
-
+    
     # Терминальные программы.
     zsh
     starship
@@ -21,6 +21,7 @@
     unimatrix
     fastfetch
     zapret
+    gemini-cli
 
     # Завимимости.
     bat
