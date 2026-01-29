@@ -17,6 +17,8 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./sys-pkgs.nix
+      ./gaming-optimization.nix
+
     ];
 
   # Bootloader.
