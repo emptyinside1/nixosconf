@@ -34,7 +34,7 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.networkmanager.dns = "none";
+  # networking.networkmanager.dns = "none";
   networking.nameservers = [
     "1.1.1.1"     # Cloudflare DNS
     "8.8.8.8"     # Google DNS
