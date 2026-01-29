@@ -11,7 +11,8 @@
     qemu
     winboat
     gearlever
-    
+    amnezia-vpn
+
     # Терминальные программы.
     zsh
     starship
