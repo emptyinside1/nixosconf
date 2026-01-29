@@ -18,6 +18,7 @@
       git
       openssh
       python313Packages.pip
+      
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -32,6 +33,7 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
   programs.zsh.enable = true;  
+  programs.amnezia-vpn.enable = true;
 
   services.zapret = {
     enable = true;
