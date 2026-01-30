@@ -13,7 +13,7 @@
   };
 
   # Загрузка драйверов NVIDIA
-  services.xserver.videoDrivers = [ "amdgpu" "nvidia" ];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia = {
     # Modesetting обязателен для Wayland (Hyprland) и корректной работы драйвера
