@@ -1,13 +1,13 @@
 { pkgs, config, lib, ... }:
 let
-  dotfilesDir = "${config.home.homeDirectory}/.nixos/Hyprland-Dots/config";
+  dotfilesDir = "${config.home.homeDirectory}/.nixos/dotfiles/config";
 in
 {
   # Пакеты, необходимые для работы конфига JaKooLit
   home.packages = with pkgs; [
     # Hyprland Core & Utils
     waybar
-    rofi-wayland
+    rofi
     swaynotificationcenter
     wlogout
     swww          # Демон обоев
@@ -25,8 +25,10 @@ in
     # Темизация
     wallust
     nwg-look
-    qt5ct
-    qt6ct
+    # qt5ct
+    # qt6ct
+    libsForQt5.qt5ct
+    kdePackages.qt6ct
     
     # Терминал (используется Kitty в конфигах)
     kitty
@@ -44,6 +46,7 @@ in
 
   # Симлинки на конфиги. Используем mkOutOfStoreSymlink, чтобы редактировать файлы на месте.
   xdg.configFile = {
+    
     "hypr" = { source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/hypr"; };
     "waybar" = { source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/waybar"; };
     "rofi" = { source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/rofi"; };
@@ -54,5 +57,6 @@ in
     "btop" = { source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/btop"; };
     "cava" = { source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/cava"; };
     "fastfetch" = { source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/fastfetch"; };
+    
   };
 }

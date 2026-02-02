@@ -18,8 +18,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    hyprland.url = "github:hyprwm/Hyprland/release-0.43";
-
+    hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
   };
 
   outputs = { self, nixpkgs, nixpkgs-stable, home-manager, zen-browser, ... } @inputs:
@@ -40,6 +40,7 @@
           home-manager.useUserPackages = true;
           home-manager.extraSpecialArgs = { inherit pkgs-stable inputs zen-browser; };
           home-manager.users.daniil = import ./home.nix;
+          home-manager.backupFileExtension = "backup"; 
         }
 
       ];
