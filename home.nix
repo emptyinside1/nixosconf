@@ -12,6 +12,7 @@
     ./home/dotfiles.nix
     ./home/scripts.nix
     ./home/fastfetch.nix
+    ./home/hyprland.nix
     inputs.zen-browser.homeModules.twilight
 
   ];

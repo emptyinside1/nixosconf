@@ -77,10 +77,25 @@
   # services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.cinnamon.enable = true;
 
+  # === Hyprland Configuration ===
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
+  
+  # Hyprlock needs PAM access
+  security.pam.services.hyprlock = {};
+
+  # Portals for screen sharing and file picking
+  xdg.portal = {
+    enable = true;
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+  };
+
 
   # Configure keymap in X11
   services.xserver.xkb = {
-    layout = "ru";
+    layout = "ru, us";
     variant = "";
   };
 
