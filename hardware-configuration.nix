@@ -14,7 +14,7 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = { 
-    device = "/dev/nvme0n1p6";
+    device = "/dev/disk/by-uuid/75d9029b-b2a0-4f84-8907-1462cea199f5";
     fsType = "ext4";
   };
 
@@ -25,9 +25,14 @@
   };
 
   swapDevices = [ 
-    { device = "/dev/nvme0n1p2"; }
+    { device = "/dev/disk/by-uuid/90d11698-448e-4013-bac7-94c34d25d76a"; }
   ];
-
+  
+  fileSystems."/run/media/daniil/D" = {
+    device = "/dev/disk/by-uuid/e728007a-6d2a-4e2f-ad14-3593d79b86b2";
+    fsType = "ext4";
+    options = [ "users" "nofail" ];
+  }
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
