@@ -1,0 +1,248 @@
+{
+   "account": {
+      "message": "Konto"
+   },
+   "au": {
+      "message": "Australien"
+   },
+   "br": {
+      "message": "Brasilien"
+   },
+   "ca": {
+      "message": "Kanada"
+   },
+   "cl": {
+      "message": "Chile"
+   },
+   "claimOffer": {
+      "message": "Angebot sichern"
+   },
+   "connected": {
+      "message": "Verbunden"
+   },
+   "contactUs": {
+      "message": "Kontaktieren Sie uns"
+   },
+   "continueText": {
+      "message": "Oder ohne Konto fortfahren"
+   },
+   "copyLink": {
+      "message": "Link kopieren"
+   },
+   "de": {
+      "message": "Deutschland"
+   },
+   "disableAddressAutofill": {
+      "message": "Automatisches Ausfüllen der Adresse deaktivieren"
+   },
+   "disableAddressAutofillSubTitle": {
+      "message": "Deaktiviere das automatische Ausfüllen von Adressen in Formularen, um deinen Standort zu schützen."
+   },
+   "disableWebRtc": {
+      "message": "WebRTC deaktivieren"
+   },
+   "disableWebRtcSubTitle": {
+      "message": "Deaktiviere WebRTC, um das Lecken deiner realen IP-Adresse zu verhindern."
+   },
+   "disconnected": {
+      "message": "Getrennt"
+   },
+   "downloadApp": {
+      "message": "App herunterladen"
+   },
+   "editInfo": {
+      "message": "Info bearbeiten"
+   },
+   "email": {
+      "message": "E-Mail"
+   },
+   "es": {
+      "message": "Spanien"
+   },
+   "extDesc": {
+      "message": "Kostenloser VPN, unbegrenzte Daten, schnelle Geschwindigkeiten, sichere Verschlüsselung, keine Protokollierung."
+   },
+   "extName": {
+      "message": "Kostenloser VPN - Free VPN - 1VPN"
+   },
+   "facebook": {
+      "message": "Facebook"
+   },
+   "forgotPassword": {
+      "message": "Passwort vergessen?"
+   },
+   "fr": {
+      "message": "Frankreich"
+   },
+   "free": {
+      "message": "Kostenlos"
+   },
+   "goToLocationsPage": {
+      "message": "Zur Standortseite gehen"
+   },
+   "goToOptionsPage": {
+      "message": "Zur Einstellungsseite gehen"
+   },
+   "in": {
+      "message": "Indien"
+   },
+   "installInstructions": {
+      "message": "Klicken Sie auf das Puzzle-Symbol neben der Adressleiste. Klicken Sie dann auf das Stecknadel-Symbol, um die Erweiterung anzuheften."
+   },
+   "installModalText": {
+      "message": "Schalte diesen Standort frei, indem du einen anderen Nutzer dazu bringst, die Erweiterung über diesen Link zu installieren:"
+   },
+   "installSuccess": {
+      "message": "1VPN wurde erfolgreich installiert"
+   },
+   "jp": {
+      "message": "Japan"
+   },
+   "kr": {
+      "message": "Südkorea"
+   },
+   "linkCopied": {
+      "message": "Link kopiert!"
+   },
+   "linkedin": {
+      "message": "LinkedIn"
+   },
+   "loading": {
+      "message": "Lädt..."
+   },
+   "locations": {
+      "message": "Standorte"
+   },
+   "login": {
+      "message": "Anmelden"
+   },
+   "logout": {
+      "message": "Abmelden"
+   },
+   "menu": {
+      "message": "Menü"
+   },
+   "mx": {
+      "message": "Mexiko"
+   },
+   "nl": {
+      "message": "Niederlande"
+   },
+   "ok": {
+      "message": "Odnoklassniki"
+   },
+   "options": {
+      "message": "Einstellungen"
+   },
+   "password": {
+      "message": "Passwort"
+   },
+   "pl": {
+      "message": "Polen"
+   },
+   "plan": {
+      "message": "Tarif"
+   },
+   "premium": {
+      "message": "Premium"
+   },
+   "reviewModalButton": {
+      "message": "Bewertung hinterlassen"
+   },
+   "reviewModalTitle": {
+      "message": "Hinterlasse eine 5-Sterne-Bewertung, um diesen Standort freizuschalten"
+   },
+   "ro": {
+      "message": "Rumänien"
+   },
+   "saveSixtyPercent": {
+      "message": "60% sparen"
+   },
+   "scanOrClickQRCode": {
+      "message": "QR-Code scannen oder anklicken"
+   },
+   "scanQrCodeOrClickButton": {
+      "message": "Scanne den QR-Code oder klicke auf den Button, um die App herunterzuladen."
+   },
+   "se": {
+      "message": "Schweden"
+   },
+   "sg": {
+      "message": "Singapur"
+   },
+   "shareModalTitle": {
+      "message": "Teile 1VPN, um diesen Ort freizuschalten"
+   },
+   "shareText": {
+      "message": "Ich habe gerade 1VPN ausprobiert – ein kostenloses, einfaches und sicheres VPN mit unbegrenztem Datenvolumen und hoher Geschwindigkeit. Schau es dir an unter https://1vpn.org?from=share"
+   },
+   "signUp": {
+      "message": "Registrieren"
+   },
+   "specialOffer": {
+      "message": "Sonderangebot"
+   },
+   "spoofGeolocation": {
+      "message": "Geolocation fälschen"
+   },
+   "spoofGeolocationSubTitle": {
+      "message": "Spoof HTML5-Geolocation-API, um deinen aktuellen VPN-Standort zu entsprechen."
+   },
+   "telegram": {
+      "message": "Telegram"
+   },
+   "tryOurAndroidApp": {
+      "message": "Probiere unsere Android-App aus"
+   },
+   "ue": {
+      "message": "USA Ost"
+   },
+   "uk": {
+      "message": "Vereinigtes Königreich"
+   },
+   "until": {
+      "message": "Bis"
+   },
+   "upgrade": {
+      "message": "Aktualisieren"
+   },
+   "upgradeLocation": {
+      "message": "Upgraden, um diesen Standort zu erreichen"
+   },
+   "upgradeModalText": {
+      "message": "im Jahresplan. Schalte mehr Standorte und höhere Geschwindigkeiten mit 10-Tage Geld-zurück-Garantie frei."
+   },
+   "upgradeText1": {
+      "message": "Upgraden"
+   },
+   "upgradeText2": {
+      "message": "für mehr Standorte und schnellere Geschwindigkeiten"
+   },
+   "us": {
+      "message": "USA Süd"
+   },
+   "use": {
+      "message": "USA Ost"
+   },
+   "username": {
+      "message": "Benutzername"
+   },
+   "uss": {
+      "message": "USA Süd"
+   },
+   "usw": {
+      "message": "USA West"
+   },
+   "uw": {
+      "message": "USA West"
+   },
+   "vk": {
+      "message": "VK"
+   },
+   "x": {
+      "message": "X (Twitter)"
+   },
+   "za": {
+      "message": "Südafrika"
+   }
+}

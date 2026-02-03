@@ -11,10 +11,12 @@ in
     swaynotificationcenter
     wlogout
     swww          # Демон обоев
-    hyprlock
+    # hyprlock
     hypridle
     hyprpicker
-    
+    thunar
+    mpvpaper
+
     # Скриншоты и буфер обмена
     grim
     slurp

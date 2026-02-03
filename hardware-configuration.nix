@@ -29,7 +29,8 @@
   ];
   
   fileSystems."/run/media/daniil/D" = {
-    device = "/dev/disk/by-uuid/e728007a-6d2a-4e2f-ad14-3593d79b86b2";
+    # device = "/dev/disk/by-uuid/e728007a-6d2a-4e2f-ad14-3593d79b86b2";
+    device = "/dev/sda1";
     fsType = "ext4";
     options = [ "users" "nofail" ];
   };

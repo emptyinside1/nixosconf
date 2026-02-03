@@ -1,0 +1,110 @@
+temp_comparison/waybar:
+config
+configs
+Modules
+ModulesCustom
+ModulesGroups
+ModulesVertical
+ModulesWorkspaces
+style
+style.css
+UserModules
+wallust
+
+temp_comparison/waybar/configs:
+[BOT] Camellia
+[BOT] Chrysanthemum
+[BOT] Default Laptop
+[BOT] Gardenia
+[BOT & Left] SouthWest
+[BOT] Peony
+[BOT & Right] SouthEast
+[BOT] Simple
+[BOT] Sleek
+[LEFT] WestWing
+[LEFT] WestWing v2
+[RIGHT] EastWing
+[RIGHT] EastWing v2
+[TOP] 0-Ja-0
+[TOP] Arrow
+[TOP & BOT] SummitSplit
+[TOP & BOT] SummitSplit v2
+[TOP] Camellia
+[TOP] Chrysanthemum
+[TOP] Default Laptop
+[TOP] Default Laptop (old v1)
+[TOP] Default Laptop (old v2)
+[TOP] Default Laptop (old v3)
+[TOP] Default Laptop (old v4)
+[TOP] Everforest
+[TOP] Gardenia
+[TOP & Left] NorthWest
+[TOP] Minimal - Long
+[TOP] Minimal - Short
+[TOP] Peony
+[TOP & Right] NorthEast
+[TOP] Simple
+[TOP] Simpliest
+[TOP] Sleek
+
+temp_comparison/waybar/style:
+[0 VERTICAL] [Catpuccin] Mocha.css
+[0 VERTICAL] Golden Noir.css
+[0 VERTICAL] Oglo Chicklets.css
+[Black & White] Monochrome.css
+[Catppuccin] Frappe.css
+[Catppuccin] Latte.css
+[Catppuccin] Mocha.css
+catppuccin-themes
+[Colored] Chroma Glow.css
+[Colored] Translucent.css
+[Colorful] Aurora Blossom.css
+[Colorful] Aurora.css
+[Colorful] Oglo Chicklets.css
+[Colorful] Rainbow Spectrum.css
+[Colorful] stolen-style.css
+[Dark] Golden Eclipse.css
+[Dark] Golden Noir.css
+[Dark] Half-Moon.css
+[Dark] Latte-Wallust combined.css
+[Dark] Latte-Wallust combined v2.css
+[Dark] Purpl.css
+[Dark] Wallust Obsidian Edge.css
+[Extra] Arrow.css
+[Extra] Crimson.css
+[Extra] EverForest.css
+[Extra] Mauve.css
+[Extra] ML4W starter.css
+[Extra] Modern-Combined.css
+[Extra] Modern-Combined - Transparent.css
+[Extra] Neon Circuit.css
+[Extra] Prismatic Glow.css
+[Extra] Rose Pine.css
+[Extra] Simple Pink.css
+[Light] Monochrome Contrast.css
+[Light] Obsidian Glow.css
+[Rainbow] RGB Bordered.css
+[Retro] Simple Style.css
+[Transparent] Crystal Clear.css
+[VERTICAL] [Catpuccin] Mocha.css
+[Wallust Bordered] Chroma Fusion Edge.css
+[Wallust Bordered] Chroma Simple.css
+[Wallust] Box type.css
+[Wallust] Chroma Edge.css
+[Wallust] Chroma Fusion.css
+[Wallust] Chroma Tally.css
+[Wallust] Chroma Tally V2.css
+[Wallust] Colored.css
+[WALLUST] ML4W-modern.css
+[WALLUST] ML4W-modern-mixed.css
+[Wallust] Simple.css
+[Wallust Transparent] Crystal Clear.css
+
+temp_comparison/waybar/style/catppuccin-themes:
+frappe.css
+latte.css
+mocha.css
+rgbmocha.css
+
+temp_comparison/waybar/wallust:
+colors-waybar.css

@@ -1,0 +1,212 @@
+{
+   "account": {
+      "message": "Compte"
+   },
+   "au": {
+      "message": "Australie"
+   },
+   "br": {
+      "message": "Brésil"
+   },
+   "ca": {
+      "message": "Canada"
+   },
+   "cl": {
+      "message": "Chili"
+   },
+   "connected": {
+      "message": "Connecté"
+   },
+   "contactUs": {
+      "message": "Contactez-nous"
+   },
+   "continueText": {
+      "message": "Ou continuer sans compte"
+   },
+   "de": {
+      "message": "Allemagne"
+   },
+   "disableAddressAutofill": {
+      "message": "Désactiver le remplissage automatique des adresses"
+   },
+   "disableAddressAutofillSubTitle": {
+      "message": "Désactivez le remplissage automatique des adresses dans les formulaires pour protéger votre emplacement."
+   },
+   "disableWebRtc": {
+      "message": "Désactiver WebRTC"
+   },
+   "disableWebRtcSubTitle": {
+      "message": "Désactivez WebRTC pour empêcher votre adresse IP réelle de fuiter."
+   },
+   "disconnected": {
+      "message": "Déconnecté"
+   },
+   "editInfo": {
+      "message": "Modifier les informations"
+   },
+   "email": {
+      "message": "Courriel"
+   },
+   "es": {
+      "message": "Espagne"
+   },
+   "extDesc": {
+      "message": "VPN gratuit, données illimitées, vitesses rapides, cryptage sécurisé, politique de non-enregistrement et facile à utiliser."
+   },
+   "extName": {
+      "message": "VPN gratuit - Free VPN - 1VPN"
+   },
+   "facebook": {
+      "message": "Facebook"
+   },
+   "forgotPassword": {
+      "message": "Mot de passe oublié ?"
+   },
+   "fr": {
+      "message": "France"
+   },
+   "free": {
+      "message": "Gratuit"
+   },
+   "goToLocationsPage": {
+      "message": "Aller à la page des emplacements"
+   },
+   "goToOptionsPage": {
+      "message": "Aller à la page des options"
+   },
+   "in": {
+      "message": "Inde"
+   },
+   "installInstructions": {
+      "message": "Cliquez sur l’icône de puzzle à côté de la barre d’adresse. Puis cliquez sur l’icône d’épingle pour épingler l’extension."
+   },
+   "installSuccess": {
+      "message": "1VPN a été installé avec succès"
+   },
+   "jp": {
+      "message": "Japon"
+   },
+   "kr": {
+      "message": "Corée du Sud"
+   },
+   "linkedin": {
+      "message": "LinkedIn"
+   },
+   "loading": {
+      "message": "Chargement..."
+   },
+   "locations": {
+      "message": "Emplacements"
+   },
+   "login": {
+      "message": "Connexion"
+   },
+   "logout": {
+      "message": "Déconnexion"
+   },
+   "menu": {
+      "message": "Menu"
+   },
+   "mx": {
+      "message": "Mexique"
+   },
+   "nl": {
+      "message": "Pays-Bas"
+   },
+   "ok": {
+      "message": "Odnoklassniki"
+   },
+   "options": {
+      "message": "Options"
+   },
+   "password": {
+      "message": "Mot de passe"
+   },
+   "pl": {
+      "message": "Pologne"
+   },
+   "plan": {
+      "message": "Plan"
+   },
+   "premium": {
+      "message": "Premium"
+   },
+   "reviewModalButton": {
+      "message": "Laisser un avis"
+   },
+   "reviewModalTitle": {
+      "message": "Laissez un avis 5 étoiles pour débloquer cet emplacement"
+   },
+   "ro": {
+      "message": "Roumanie"
+   },
+   "se": {
+      "message": "Suède"
+   },
+   "sg": {
+      "message": "Singapour"
+   },
+   "shareModalTitle": {
+      "message": "Partagez 1VPN pour débloquer cet emplacement"
+   },
+   "shareText": {
+      "message": "Je viens d’essayer 1VPN, un VPN gratuit, simple et sécurisé avec des données illimitées et une grande vitesse. Découvrez-le sur https://1vpn.org?from=share"
+   },
+   "signUp": {
+      "message": "Inscription"
+   },
+   "spoofGeolocation": {
+      "message": "Usurper la géolocalisation"
+   },
+   "spoofGeolocationSubTitle": {
+      "message": "Faussez l'API de géolocalisation HTML5 pour correspondre à votre emplacement VPN actuel."
+   },
+   "telegram": {
+      "message": "Telegram"
+   },
+   "ue": {
+      "message": "Est des États-Unis"
+   },
+   "uk": {
+      "message": "Royaume-Uni"
+   },
+   "upgrade": {
+      "message": "Mise à niveau"
+   },
+   "upgradeLocation": {
+      "message": "Mettez à niveau pour accéder à cet emplacement"
+   },
+   "upgradeText1": {
+      "message": "Mettez à niveau"
+   },
+   "upgradeText2": {
+      "message": "pour obtenir plus d’emplacements et des vitesses plus élevées"
+   },
+   "us": {
+      "message": "Sud des États-Unis"
+   },
+   "use": {
+      "message": "Est des États-Unis"
+   },
+   "username": {
+      "message": "Nom d’utilisateur"
+   },
+   "uss": {
+      "message": "Sud des États-Unis"
+   },
+   "usw": {
+      "message": "Ouest des États-Unis"
+   },
+   "uw": {
+      "message": "Ouest des États-Unis"
+   },
+   "vk": {
+      "message": "VK"
+   },
+   "x": {
+      "message": "X (Twitter)"
+   },
+   "za": {
+      "message": "Afrique du Sud"
+   }
+}

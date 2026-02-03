@@ -1,0 +1,8 @@
+2026/01/29-20:17:17.547 8e3f Creating DB /home/daniil/.config/Antigravity/Local Storage/leveldb since it was missing.
+2026/01/29-20:17:17.562 8e3f Reusing MANIFEST /home/daniil/.config/Antigravity/Local Storage/leveldb/MANIFEST-000001
+2026/01/29-20:18:17.565 8e3f Level-0 table #5: started
+2026/01/29-20:18:17.571 8e3f Level-0 table #5: 33967 bytes OK
+2026/01/29-20:18:17.574 8e3f Delete type=0 #3
+2026/01/29-20:18:40.598 8e40 Level-0 table #7: started
+2026/01/29-20:18:40.601 8e40 Level-0 table #7: 33176 bytes OK
+2026/01/29-20:18:40.604 8e40 Delete type=0 #4

@@ -1,0 +1,248 @@
+{
+   "account": {
+      "message": "Учетная запись"
+   },
+   "au": {
+      "message": "Австралия"
+   },
+   "br": {
+      "message": "Бразилия"
+   },
+   "ca": {
+      "message": "Канада"
+   },
+   "cl": {
+      "message": "Чили"
+   },
+   "claimOffer": {
+      "message": "Получить предложение"
+   },
+   "connected": {
+      "message": "Подключено"
+   },
+   "contactUs": {
+      "message": "Свяжитесь с нами"
+   },
+   "continueText": {
+      "message": "Или продолжить без учетной записи"
+   },
+   "copyLink": {
+      "message": "Скопировать ссылку"
+   },
+   "de": {
+      "message": "Германия"
+   },
+   "disableAddressAutofill": {
+      "message": "Отключить автозаполнение адреса"
+   },
+   "disableAddressAutofillSubTitle": {
+      "message": "Отключите автоматическое заполнение адресов в формах, чтобы защитить свое местоположение."
+   },
+   "disableWebRtc": {
+      "message": "Отключить WebRTC"
+   },
+   "disableWebRtcSubTitle": {
+      "message": "Отключите WebRTC, чтобы предотвратить утечку вашего реального IP-адреса."
+   },
+   "disconnected": {
+      "message": "Отключено"
+   },
+   "downloadApp": {
+      "message": "Скачать приложение"
+   },
+   "editInfo": {
+      "message": "Редактировать информацию"
+   },
+   "email": {
+      "message": "Электронная почта"
+   },
+   "es": {
+      "message": "Испания"
+   },
+   "extDesc": {
+      "message": "Бесплатный ВПН / VPN , неограниченные данные, высокая скорость, безопасное шифрование, отсутствие логов и простота использования."
+   },
+   "extName": {
+      "message": "Бесплатный VPN / ВПН - Free VPN - 1VPN"
+   },
+   "facebook": {
+      "message": "Фейсбук"
+   },
+   "forgotPassword": {
+      "message": "Забыли пароль?"
+   },
+   "fr": {
+      "message": "Франция"
+   },
+   "free": {
+      "message": "Бесплатный"
+   },
+   "goToLocationsPage": {
+      "message": "Перейти на страницу местоположений"
+   },
+   "goToOptionsPage": {
+      "message": "Перейти на страницу опций"
+   },
+   "in": {
+      "message": "Индия"
+   },
+   "installInstructions": {
+      "message": "Нажмите на значок пазла рядом со строкой адреса. Затем нажмите на значок булавки, чтобы закрепить расширение."
+   },
+   "installModalText": {
+      "message": "Разблокируйте это местоположение, попросив другого пользователя установить расширение по этой ссылке:"
+   },
+   "installSuccess": {
+      "message": "1VPN успешно установлен"
+   },
+   "jp": {
+      "message": "Япония"
+   },
+   "kr": {
+      "message": "Южная Корея"
+   },
+   "linkCopied": {
+      "message": "Ссылка скопирована!"
+   },
+   "linkedin": {
+      "message": "Линкедин"
+   },
+   "loading": {
+      "message": "Загрузка..."
+   },
+   "locations": {
+      "message": "Местоположения"
+   },
+   "login": {
+      "message": "Войти"
+   },
+   "logout": {
+      "message": "Выйти"
+   },
+   "menu": {
+      "message": "Меню"
+   },
+   "mx": {
+      "message": "Мексика"
+   },
+   "nl": {
+      "message": "Нидерланды"
+   },
+   "ok": {
+      "message": "Одноклассники"
+   },
+   "options": {
+      "message": "Опции"
+   },
+   "password": {
+      "message": "Пароль"
+   },
+   "pl": {
+      "message": "Польша"
+   },
+   "plan": {
+      "message": "План"
+   },
+   "premium": {
+      "message": "Премиум"
+   },
+   "reviewModalButton": {
+      "message": "Оставить отзыв"
+   },
+   "reviewModalTitle": {
+      "message": "Оставьте 5-звёздочный отзыв, чтобы разблокировать это местоположение"
+   },
+   "ro": {
+      "message": "Румыния"
+   },
+   "saveSixtyPercent": {
+      "message": "Экономьте 60%"
+   },
+   "scanOrClickQRCode": {
+      "message": "Сканируйте или нажмите на QR-код"
+   },
+   "scanQrCodeOrClickButton": {
+      "message": "Сканируйте QR-код или нажмите кнопку для загрузки."
+   },
+   "se": {
+      "message": "Швеция"
+   },
+   "sg": {
+      "message": "Сингапур"
+   },
+   "shareModalTitle": {
+      "message": "Поделитесь 1VPN, чтобы разблокировать это местоположение"
+   },
+   "shareText": {
+      "message": "Я только что попробовал 1VPN — бесплатный, простой и безопасный VPN с неограниченным трафиком и высокой скоростью. Посмотрите на https://1vpn.org?from=share"
+   },
+   "signUp": {
+      "message": "Регистр"
+   },
+   "specialOffer": {
+      "message": "Специальное предложение"
+   },
+   "spoofGeolocation": {
+      "message": "Подделка геолокации"
+   },
+   "spoofGeolocationSubTitle": {
+      "message": "Подделка API геолокации HTML5, чтобы соответствовать вашему текущему местоположению VPN."
+   },
+   "telegram": {
+      "message": "Телеграм"
+   },
+   "tryOurAndroidApp": {
+      "message": "Попробуйте Android-приложение"
+   },
+   "ue": {
+      "message": "Восток США"
+   },
+   "uk": {
+      "message": "Великобритания"
+   },
+   "until": {
+      "message": "До"
+   },
+   "upgrade": {
+      "message": "Обновить"
+   },
+   "upgradeLocation": {
+      "message": "Для доступа к местоположению обновите план"
+   },
+   "upgradeModalText": {
+      "message": "на годовом плане. Разблокируйте больше локаций и более высокую скорость с 10-дневной гарантией возврата."
+   },
+   "upgradeText1": {
+      "message": "Обновить"
+   },
+   "upgradeText2": {
+      "message": "для большего количества местоположений и повышения скорости"
+   },
+   "us": {
+      "message": "Юг США"
+   },
+   "use": {
+      "message": "Восток США"
+   },
+   "username": {
+      "message": "Имя пользователя"
+   },
+   "uss": {
+      "message": "Юг США"
+   },
+   "usw": {
+      "message": "Запад США"
+   },
+   "uw": {
+      "message": "Запад США"
+   },
+   "vk": {
+      "message": "VK"
+   },
+   "x": {
+      "message": "X (Твиттер)"
+   },
+   "za": {
+      "message": "Южная Африка"
+   }
+}

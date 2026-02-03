@@ -11,6 +11,8 @@
     qemu
     winboat
     gearlever
+    mpv
+    antigravity
 
     # Терминальные программы.
     zsh
@@ -22,6 +24,7 @@
     fastfetch
     zapret
     gemini-cli
+    cava
 
     # Завимимости.
     bat

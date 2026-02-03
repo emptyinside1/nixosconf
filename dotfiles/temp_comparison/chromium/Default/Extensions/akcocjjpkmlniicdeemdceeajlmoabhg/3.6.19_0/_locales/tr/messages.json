@@ -1,0 +1,248 @@
+{
+   "account": {
+      "message": "Hesap"
+   },
+   "au": {
+      "message": "Avustralya"
+   },
+   "br": {
+      "message": "Brezilya"
+   },
+   "ca": {
+      "message": "Kanada"
+   },
+   "cl": {
+      "message": "Şili"
+   },
+   "claimOffer": {
+      "message": "Teklifi al"
+   },
+   "connected": {
+      "message": "Bağlandı"
+   },
+   "contactUs": {
+      "message": "Bize Ulaş"
+   },
+   "continueText": {
+      "message": "Veya hesapsız devam et"
+   },
+   "copyLink": {
+      "message": "Bağlantıyı kopyala"
+   },
+   "de": {
+      "message": "Almanya"
+   },
+   "disableAddressAutofill": {
+      "message": "Oto Adres Doldurmayı Devre Dışı Bırak"
+   },
+   "disableAddressAutofillSubTitle": {
+      "message": "Konumunuzu korumak için formlarda otomatik adres doldurmayı devre dışı bırakın."
+   },
+   "disableWebRtc": {
+      "message": "WebRTC'yi devre dışı bırak"
+   },
+   "disableWebRtcSubTitle": {
+      "message": "Gerçek IP adresinizin sızmasını önlemek için WebRTC'yi devre dışı bırakın."
+   },
+   "disconnected": {
+      "message": "Bağlantı Kesildi"
+   },
+   "downloadApp": {
+      "message": "Uygulamayı indir"
+   },
+   "editInfo": {
+      "message": "Bilgileri Düzenle"
+   },
+   "email": {
+      "message": "E-posta"
+   },
+   "es": {
+      "message": "İspanya"
+   },
+   "extDesc": {
+      "message": "Ücretsiz VPN, sınırsız veri, hızlı bağlantı, güvenli şifreleme, kayıt yok politikası ve kullanımı kolay."
+   },
+   "extName": {
+      "message": "Ücretsiz VPN - Free VPN - 1VPN"
+   },
+   "facebook": {
+      "message": "Facebook"
+   },
+   "forgotPassword": {
+      "message": "Şifreni mi unuttun?"
+   },
+   "fr": {
+      "message": "Fransa"
+   },
+   "free": {
+      "message": "Ücretsiz"
+   },
+   "goToLocationsPage": {
+      "message": "Konumlar Sayfasına Git"
+   },
+   "goToOptionsPage": {
+      "message": "Seçenekler Sayfasına Git"
+   },
+   "in": {
+      "message": "Hindistan"
+   },
+   "installInstructions": {
+      "message": "Adres çubuğunun yanındaki puzzle simgesine tıklayın. Ardından uzantıyı sabitlemek için raptiye simgesine tıklayın."
+   },
+   "installModalText": {
+      "message": "Bu konumu açmak için başka bir kullanıcıdan bu bağlantıyla uzantıyı yüklemesini isteyin:"
+   },
+   "installSuccess": {
+      "message": "1VPN başarıyla kuruldu"
+   },
+   "jp": {
+      "message": "Japonya"
+   },
+   "kr": {
+      "message": "Güney Kore"
+   },
+   "linkCopied": {
+      "message": "Bağlantı kopyalandı!"
+   },
+   "linkedin": {
+      "message": "LinkedIn"
+   },
+   "loading": {
+      "message": "Yükleniyor..."
+   },
+   "locations": {
+      "message": "Konumlar"
+   },
+   "login": {
+      "message": "Giriş Yap"
+   },
+   "logout": {
+      "message": "Oturumu Kapat"
+   },
+   "menu": {
+      "message": "Menü"
+   },
+   "mx": {
+      "message": "Meksika"
+   },
+   "nl": {
+      "message": "Hollanda"
+   },
+   "ok": {
+      "message": "Odnoklassniki"
+   },
+   "options": {
+      "message": "Seçenekler"
+   },
+   "password": {
+      "message": "Şifre"
+   },
+   "pl": {
+      "message": "Polonya"
+   },
+   "plan": {
+      "message": "Plan"
+   },
+   "premium": {
+      "message": "Premium"
+   },
+   "reviewModalButton": {
+      "message": "İnceleme bırak"
+   },
+   "reviewModalTitle": {
+      "message": "Bu konumun kilidini açmak için 5 yıldızlı yorum bırakın"
+   },
+   "ro": {
+      "message": "Romanya"
+   },
+   "saveSixtyPercent": {
+      "message": "%60 tasarruf"
+   },
+   "scanOrClickQRCode": {
+      "message": "QR kodunu tarayın veya tıklayın"
+   },
+   "scanQrCodeOrClickButton": {
+      "message": "Android uygulamamızı indirmek için QR kodunu tarayın veya aşağıdaki butona tıklayın."
+   },
+   "se": {
+      "message": "İsveç"
+   },
+   "sg": {
+      "message": "Singapur"
+   },
+   "shareModalTitle": {
+      "message": "Bu konumun kilidini açmak için 1VPN’i paylaşın"
+   },
+   "shareText": {
+      "message": "Az önce 1VPN’i denedim. Sınırsız veri ve yüksek hız sunan ücretsiz, basit ve güvenli bir VPN. https://1vpn.org?from=share adresine göz atın"
+   },
+   "signUp": {
+      "message": "Kaydol"
+   },
+   "specialOffer": {
+      "message": "Özel teklif"
+   },
+   "spoofGeolocation": {
+      "message": "Geolokasyon sahtekarlığı"
+   },
+   "spoofGeolocationSubTitle": {
+      "message": "Mevcut VPN konumunuzu eşleştirmek için HTML5 Coğrafi Konum API'sini sahteleyin."
+   },
+   "telegram": {
+      "message": "Telegram"
+   },
+   "tryOurAndroidApp": {
+      "message": "Android Uygulamamızı Deneyin"
+   },
+   "ue": {
+      "message": "Doğu ABD"
+   },
+   "uk": {
+      "message": "Birleşik Krallık"
+   },
+   "until": {
+      "message": "Kadar"
+   },
+   "upgrade": {
+      "message": "Yükselt"
+   },
+   "upgradeLocation": {
+      "message": "Bu konuma erişmek için planını yükselt"
+   },
+   "upgradeModalText": {
+      "message": "yıllık planda. Daha fazla konum ve daha yüksek hız 10 gün para iade garantisiyle."
+   },
+   "upgradeText1": {
+      "message": "Yükselt"
+   },
+   "upgradeText2": {
+      "message": "daha fazla konum ve daha yüksek hızlar için"
+   },
+   "us": {
+      "message": "Güney ABD"
+   },
+   "use": {
+      "message": "Doğu ABD"
+   },
+   "username": {
+      "message": "Kullanıcı Adı"
+   },
+   "uss": {
+      "message": "Güney ABD"
+   },
+   "usw": {
+      "message": "Bat ABD"
+   },
+   "uw": {
+      "message": "Bat ABD"
+   },
+   "vk": {
+      "message": "VK"
+   },
+   "x": {
+      "message": "X (Twitter)"
+   },
+   "za": {
+      "message": "Güney Afrika"
+   }
+}

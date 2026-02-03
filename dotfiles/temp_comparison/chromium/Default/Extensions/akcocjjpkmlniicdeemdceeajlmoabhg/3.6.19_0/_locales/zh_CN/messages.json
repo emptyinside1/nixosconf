@@ -1,0 +1,248 @@
+{
+   "account": {
+      "message": "账号"
+   },
+   "au": {
+      "message": "澳大利亚"
+   },
+   "br": {
+      "message": "巴西"
+   },
+   "ca": {
+      "message": "加拿大"
+   },
+   "cl": {
+      "message": "智利"
+   },
+   "claimOffer": {
+      "message": "领取优惠"
+   },
+   "connected": {
+      "message": "已连接"
+   },
+   "contactUs": {
+      "message": "联系我们"
+   },
+   "continueText": {
+      "message": "或继续无账号登录"
+   },
+   "copyLink": {
+      "message": "复制链接"
+   },
+   "de": {
+      "message": "德国"
+   },
+   "disableAddressAutofill": {
+      "message": "禁用地址自动填充"
+   },
+   "disableAddressAutofillSubTitle": {
+      "message": "禁用表单中的自动地址填充以保护您的位置。"
+   },
+   "disableWebRtc": {
+      "message": "禁用WebRTC"
+   },
+   "disableWebRtcSubTitle": {
+      "message": "禁用WebRTC以防止泄露您的真实IP地址。"
+   },
+   "disconnected": {
+      "message": "未连接"
+   },
+   "downloadApp": {
+      "message": "下载应用"
+   },
+   "editInfo": {
+      "message": "编辑信息"
+   },
+   "email": {
+      "message": "电子邮箱"
+   },
+   "es": {
+      "message": "西班牙"
+   },
+   "extDesc": {
+      "message": "免费VPN，无限数据，快速速度，安全加密，无日志政策，且易于使用。"
+   },
+   "extName": {
+      "message": "免费VPN - Free VPN - 1VPN"
+   },
+   "facebook": {
+      "message": "Facebook"
+   },
+   "forgotPassword": {
+      "message": "忘记密码？"
+   },
+   "fr": {
+      "message": "法国"
+   },
+   "free": {
+      "message": "免费版"
+   },
+   "goToLocationsPage": {
+      "message": "前往位置页面"
+   },
+   "goToOptionsPage": {
+      "message": "前往选项页面"
+   },
+   "in": {
+      "message": "印度"
+   },
+   "installInstructions": {
+      "message": "点击地址栏旁边的拼图图标。然后点击图钉图标以固定扩展程序。"
+   },
+   "installModalText": {
+      "message": "通过让其他用户使用此链接安装扩展来解锁此位置："
+   },
+   "installSuccess": {
+      "message": "1VPN已成功安装"
+   },
+   "jp": {
+      "message": "日本"
+   },
+   "kr": {
+      "message": "韩国"
+   },
+   "linkCopied": {
+      "message": "链接已复制！"
+   },
+   "linkedin": {
+      "message": "LinkedIn"
+   },
+   "loading": {
+      "message": "加载中..."
+   },
+   "locations": {
+      "message": "位置"
+   },
+   "login": {
+      "message": "登录"
+   },
+   "logout": {
+      "message": "退出"
+   },
+   "menu": {
+      "message": "菜单"
+   },
+   "mx": {
+      "message": "墨西哥"
+   },
+   "nl": {
+      "message": "荷兰"
+   },
+   "ok": {
+      "message": "Odnoklassniki"
+   },
+   "options": {
+      "message": "选项"
+   },
+   "password": {
+      "message": "密码"
+   },
+   "pl": {
+      "message": "波兰"
+   },
+   "plan": {
+      "message": "计划"
+   },
+   "premium": {
+      "message": "高级版"
+   },
+   "reviewModalButton": {
+      "message": "留下评价"
+   },
+   "reviewModalTitle": {
+      "message": "留下五星好评以解锁此位置"
+   },
+   "ro": {
+      "message": "罗马尼亚"
+   },
+   "saveSixtyPercent": {
+      "message": "立省60%"
+   },
+   "scanOrClickQRCode": {
+      "message": "扫描或点击二维码"
+   },
+   "scanQrCodeOrClickButton": {
+      "message": "扫描二维码或点击下方按钮下载我们的安卓应用。"
+   },
+   "se": {
+      "message": "瑞典"
+   },
+   "sg": {
+      "message": "新加坡"
+   },
+   "shareModalTitle": {
+      "message": "分享 1VPN 解锁此位置"
+   },
+   "shareText": {
+      "message": "我刚刚试用了 1VPN，这是一个免费、简单且安全的 VPN，提供无限数据和高速。请访问 https://1vpn.org?from=share 了解更多"
+   },
+   "signUp": {
+      "message": "注册"
+   },
+   "specialOffer": {
+      "message": "特别优惠"
+   },
+   "spoofGeolocation": {
+      "message": "伪造地理定位"
+   },
+   "spoofGeolocationSubTitle": {
+      "message": "伪造HTML5地理位置API以匹配您当前的VPN位置。"
+   },
+   "telegram": {
+      "message": "Telegram"
+   },
+   "tryOurAndroidApp": {
+      "message": "试用我们的安卓应用"
+   },
+   "ue": {
+      "message": "美国东部"
+   },
+   "uk": {
+      "message": "英国"
+   },
+   "until": {
+      "message": "截止"
+   },
+   "upgrade": {
+      "message": "升级"
+   },
+   "upgradeLocation": {
+      "message": "升级以访问此位置 "
+   },
+   "upgradeModalText": {
+      "message": "在年计划中。解锁更多节点和更快速度，享受10天退款保证。"
+   },
+   "upgradeText1": {
+      "message": "升级"
+   },
+   "upgradeText2": {
+      "message": "以获得更多位置和更快速度。"
+   },
+   "us": {
+      "message": "美国南部"
+   },
+   "use": {
+      "message": "美国东部"
+   },
+   "username": {
+      "message": "用户名"
+   },
+   "uss": {
+      "message": "美国南部"
+   },
+   "usw": {
+      "message": "美国西部"
+   },
+   "uw": {
+      "message": "美国西部"
+   },
+   "vk": {
+      "message": "VK"
+   },
+   "x": {
+      "message": "X（推特）"
+   },
+   "za": {
+      "message": "南非"
+   }
+}

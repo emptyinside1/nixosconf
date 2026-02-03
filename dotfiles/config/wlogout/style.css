@@ -7,7 +7,8 @@
 window {
     font-size: 24pt;
     color: @foreground; /* text */
-    background-color: rgba(30, 30, 46, 0.8);
+    /*background-color: rgba(30, 30, 46, 0.8); */
+    background-color: @background-alt;
 }
 
 button {
@@ -17,7 +18,7 @@ button {
     background-color: rgba(200, 220, 255, 0);
     animation: gradient_f 10s ease-in infinite;
     transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
-    border-radius: 80px;
+    border-radius: 0px; /* 80 */
 	border:0px;
 	outline-style: none;
 }
@@ -30,11 +31,12 @@ button:focus {
 }
 
 button:hover {
-    background-color: transparent; 
+    /* background-color: transparent; */
+    background-color: transparent;
     color: @color13;
     background-size: 50%;
     margin: 30px;
-    border-radius: 80px;
+    border-radius: 0px; /* 80 */
     outline-style: none;
 	
 }

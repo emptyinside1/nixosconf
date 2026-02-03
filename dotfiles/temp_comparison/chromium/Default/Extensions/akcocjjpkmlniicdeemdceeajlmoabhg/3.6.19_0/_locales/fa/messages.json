@@ -1,0 +1,242 @@
+{
+   "account": {
+      "message": "حساب کاربری"
+   },
+   "au": {
+      "message": "استرالیا"
+   },
+   "br": {
+      "message": "برزیل"
+   },
+   "ca": {
+      "message": "کانادا"
+   },
+   "cl": {
+      "message": "شیلی"
+   },
+   "claimOffer": {
+      "message": "دریافت پیشنهاد"
+   },
+   "connected": {
+      "message": "متصل شده"
+   },
+   "contactUs": {
+      "message": "تماس با ما"
+   },
+   "continueText": {
+      "message": "یا بدون حساب کاربری ادامه دهید"
+   },
+   "copyLink": {
+      "message": "کپی لینک"
+   },
+   "de": {
+      "message": "آلمان"
+   },
+   "disableAddressAutofill": {
+      "message": "غیرفعال‌سازی تکمیل خودکار آدرس"
+   },
+   "disableAddressAutofillSubTitle": {
+      "message": "پر کردن خودکار آدرس در فرم‌ها را برای محافظت از مکان خود غیرفعال کنید."
+   },
+   "disableWebRtc": {
+      "message": "غیرفعال‌سازی WebRTC"
+   },
+   "disableWebRtcSubTitle": {
+      "message": "WebRTC را غیرفعال کنید تا از نشت آدرس IP واقعی خود جلوگیری کنید."
+   },
+   "disconnected": {
+      "message": "اتصال قطع شده"
+   },
+   "downloadApp": {
+      "message": "دانلود برنامه"
+   },
+   "editInfo": {
+      "message": "ویرایش اطلاعات"
+   },
+   "email": {
+      "message": "ایمیل"
+   },
+   "es": {
+      "message": "اسپانیا"
+   },
+   "extDesc": {
+      "message": "وی‌پی‌ان رایگان، داده‌های نامحدود، سرعت‌های بالا، رمزگذاری امن، سیاست عدم نگهداری لاگ‌ها و استفاده آسان."
+   },
+   "extName": {
+      "message": "وی‌پی‌ان رایگان - 1VPN"
+   },
+   "facebook": {
+      "message": "فیس‌بوک"
+   },
+   "forgotPassword": {
+      "message": "کلمه عبور را فراموش کرده‌اید؟"
+   },
+   "fr": {
+      "message": "فرانسه"
+   },
+   "free": {
+      "message": "رایگان"
+   },
+   "goToLocationsPage": {
+      "message": "رفتن به صفحه موقعیت‌های مکانی"
+   },
+   "goToOptionsPage": {
+      "message": "رفتن به صفحه تنظیمات"
+   },
+   "in": {
+      "message": "هند"
+   },
+   "installModalText": {
+      "message": "این موقعیت را با درخواست از کاربر دیگری برای نصب افزونه با این لینک باز کنید:"
+   },
+   "jp": {
+      "message": "ژاپن"
+   },
+   "kr": {
+      "message": "کره جنوبی"
+   },
+   "linkCopied": {
+      "message": "لینک کپی شد!"
+   },
+   "linkedin": {
+      "message": "لینکدین"
+   },
+   "loading": {
+      "message": "در حال بارگذاری..."
+   },
+   "locations": {
+      "message": "موقعیت‌های مکانی"
+   },
+   "login": {
+      "message": "ورود"
+   },
+   "logout": {
+      "message": "خروج"
+   },
+   "menu": {
+      "message": "منو"
+   },
+   "mx": {
+      "message": "مکزیک"
+   },
+   "nl": {
+      "message": "هلند"
+   },
+   "ok": {
+      "message": "Odnoklassniki"
+   },
+   "options": {
+      "message": "تنظیمات"
+   },
+   "password": {
+      "message": "کلمه عبور"
+   },
+   "pl": {
+      "message": "لهستان"
+   },
+   "plan": {
+      "message": "طرح"
+   },
+   "premium": {
+      "message": "عضویت ویژه"
+   },
+   "reviewModalButton": {
+      "message": "نوشتن بازبینی"
+   },
+   "reviewModalTitle": {
+      "message": "برای باز کردن این مکان، یک نظر ۵ ستاره بگذارید"
+   },
+   "ro": {
+      "message": "رومانی"
+   },
+   "saveSixtyPercent": {
+      "message": "۶۰٪ صرفه‌جویی"
+   },
+   "scanOrClickQRCode": {
+      "message": "کد QR را اسکن یا کلیک کنید"
+   },
+   "scanQrCodeOrClickButton": {
+      "message": "کد QR را اسکن کنید یا روی دکمه زیر کلیک کنید تا برنامه اندروید ما را دانلود کنید."
+   },
+   "se": {
+      "message": "سوئد"
+   },
+   "sg": {
+      "message": "سنگاپور"
+   },
+   "shareModalTitle": {
+      "message": "برای باز کردن این مکان، 1VPN را به اشتراک بگذارید"
+   },
+   "shareText": {
+      "message": "من به‌تازگی 1VPN را امتحان کردم، یک VPN رایگان، ساده و امن با اینترنت نامحدود و سرعت بالا. در https://1vpn.org?from=share بررسی‌اش کنید"
+   },
+   "signUp": {
+      "message": "ثبت نام"
+   },
+   "specialOffer": {
+      "message": "پیشنهاد ویژه"
+   },
+   "spoofGeolocation": {
+      "message": "جعل ژئولوکیشن"
+   },
+   "spoofGeolocationSubTitle": {
+      "message": "API مکان‌یابی HTML5 را برای مطابقت با مکان فعلی VPN خود جعلی کنید."
+   },
+   "telegram": {
+      "message": "تلگرام"
+   },
+   "tryOurAndroidApp": {
+      "message": "برنامه اندروید ما را امتحان کنید"
+   },
+   "ue": {
+      "message": "شرق آمریکا"
+   },
+   "uk": {
+      "message": "بریتانیا"
+   },
+   "until": {
+      "message": "تا"
+   },
+   "upgrade": {
+      "message": "ارتقاء"
+   },
+   "upgradeLocation": {
+      "message": "برای دسترسی به این موقعیت مکانی می‌بایست عضویت خود را ارتقا دهید"
+   },
+   "upgradeModalText": {
+      "message": "روی طرح سالانه. مکان‌های بیشتر و سرعت بالاتر با ضمانت بازگشت ۱۰ روزه."
+   },
+   "upgradeText1": {
+      "message": "ارتقا"
+   },
+   "upgradeText2": {
+      "message": "برای دسترسی به موقعیت‌های مکانی بیشتر و سرعت بالاتر"
+   },
+   "us": {
+      "message": "جنوب آمریکا"
+   },
+   "use": {
+      "message": "شرق آمریکا"
+   },
+   "username": {
+      "message": "نام کاربری"
+   },
+   "uss": {
+      "message": "جنوب آمریکا"
+   },
+   "usw": {
+      "message": "غرب آمریکا"
+   },
+   "uw": {
+      "message": "غرب آمریکا"
+   },
+   "vk": {
+      "message": "VK"
+   },
+   "x": {
+      "message": "X (توییتر)"
+   },
+   "za": {
+      "message": "آفریقای جنوبی"
+   }
+}
