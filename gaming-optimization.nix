@@ -90,7 +90,7 @@
   # Steam оптимизации
   programs.steam = {
     enable = true;
-    gamescopeSession.enable = true; # Поддержка Gamescope (полезно для Steam Deck UI / Hyprland)
+    gamescopeSession.enable = false; # Поддержка Gamescope (полезно для Steam Deck UI / Hyprland)
     protontricks.enable = true;
   };
   
