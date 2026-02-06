@@ -23,7 +23,8 @@ in
     swappy
     wl-clipboard
     cliphist
-    
+    pamixer
+
     # Темизация
     wallust
     nwg-look
