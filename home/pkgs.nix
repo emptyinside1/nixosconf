@@ -12,8 +12,9 @@
     winboat
     gearlever
     mpv
-    antigravity
-
+    heroic
+    bottles
+  
     # Терминальные программы.
     zsh
     starship
