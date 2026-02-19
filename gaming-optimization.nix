@@ -110,5 +110,11 @@
     mangohud      # FPS мониторинг
     protonup-qt   # Управление версиями Proton (GE-Proton)
     lutris        # Лаунчер для сторонних игр
+    wine
   ];
+  
+  # Поддержка джойстика
+  hardware.xpadneo.enable = true;
+  hardware.steam-hardware.enable = true;
+  boot.kernelModules = [ "uinput" "joydev" ];
 }
