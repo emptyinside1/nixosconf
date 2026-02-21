@@ -46,6 +46,7 @@
     nerd-fonts.fira-code
     nerd-fonts.hack
   ];
+
   
   programs.pay-respects = {
     enable = true;

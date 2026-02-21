@@ -117,6 +117,7 @@
   hardware.xpadneo.enable = true;
   hardware.uinput.enable = true;
   hardware.steam-hardware.enable = true;
+  services.joycond.enable = true;
   boot.kernelModules = [ "uinput" "joydev" ];
   boot.extraModprobeConfig = ''
     options bluetooth disable_ertm=1
