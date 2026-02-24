@@ -24,6 +24,20 @@
       '';
     };
 
+    ".local/bin/nix-cleanall" = {
+      executable = true;
+      text = ''
+        #!/usr/bin/env bash
+        echo "Удаление старых поколений профиля"            
+        sudo nix-env --delete-generations old
+        echo "Удаление старых поколений системы (из загрузчика)"
+        sudo nix-collect-garbage -d
+        echo "Оптимизирование хранилища (убирает дубликаты файлов, может занять время)"
+        nix-store --optimise
+        echo "Готово."
+      '';
+    };
+
     # Пример конфига если нужно копировать целый файл
     # ".config/my-app/config" = {
     #   source = ./dotfiles/my-app-config;
