@@ -31,7 +31,7 @@
       nrs = "sudo nixos-rebuild switch --flake .";
       nru = "nix flake update";
       ncg = "nix-collect-garbage -d";
-      nixclear = "./local/bin/nix-cleanall"
+      nixclear = "./local/bin/nix-cleanall";
 
       # Быстрые команды
       cat = "bat";
