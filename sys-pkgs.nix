@@ -36,7 +36,7 @@
   programs.amnezia-vpn.enable = true;
 
   services.zapret = {
-    enable = true;
+    enable = false;
     httpSupport = true;
     httpMode = "full";
     configureFirewall = true;
