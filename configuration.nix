@@ -42,6 +42,9 @@
     "8.8.8.8"     # Google DNS
   ];
   networking.dhcpcd.enable = false;
+  # For syncthing
+  networking.firewall.allowedTCPPorts = [ 8384 22000 ];
+  networking.firewall.allowedUDPPorts = [ 22000 21027 ];
 
 
   # Set your time zone.

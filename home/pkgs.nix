@@ -63,5 +63,21 @@
   programs.zen-browser = {
     enable = true;
   };
-
+  
+  services.syncthing = {
+    enable = true;
+    overrideDevices = true;     # Применяет настройки устройств из конфига
+    overrideFolders = true;     # Применяет настройки папок из конфига
+    settings = {
+      devices = {
+        "phone" = { id = "HZILBCL-HIVL6CN-VBXONPG-FLWIIEH-R7444QN-JPWIDPG-3ETA364-O7ACIAJ"; };
+      };
+      folders = {
+        "Obsidian" = {
+          path = "/home/daniil/Documents/Obs";
+          devices = [ "phone" ]; # Синхронизировать с телефоном
+        };
+      };
+    };
+  };
 }
