@@ -14,7 +14,8 @@
     mpv
     heroic
     bottles
-  
+    obsidian
+
     # Терминальные программы.
     zsh
     starship
