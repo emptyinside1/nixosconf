@@ -44,7 +44,10 @@
       gc = "git commit -m";
       gp = "git push";
       gs = "git status";
-      gd = "git diff";  
+      gd = "git diff"; 
+
+      # Custom shortcut
+      obs2pdf = "nix-shell -p python3 python3Packages.markdown2 python3Packages.weasyprint --run "python3 ~/Documents/code/py/Obs/obsidian_to_pdf.py ~/Documents/Obs/ ~/Documents/Obs/obsidian_full_book.pdf"";
     };
     
     sessionVariables = {
