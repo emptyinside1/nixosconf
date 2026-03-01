@@ -10,7 +10,7 @@
     qbittorrent
     qemu
     winboat
-    gearlever
+    #gearlever
     mpv
     heroic
     bottles
