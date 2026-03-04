@@ -46,24 +46,25 @@
         # Path to your AppImage
         APPIMAGE="$HOME/Documents/AppImage/Dotify.AppImage"
         
-        # GStreamer paths
-        GST_PLUGINS_PATH="${pkgs.gst_all_1.gstreamer.out}/lib/gstreamer-1.0:${pkgs.gst_all_1.gst-plugins-base}/lib/gstreamer-1.0:${pkgs.gst_all_1.gst-plugins-good}/lib/gstreamer-1.0:${pkgs.gst_all_1.gst-plugins-bad}/lib/gstreamer-1.0:${pkgs.gst_all_1.gst-plugins-ugly}/lib/gstreamer-1.0:${pkgs.gst_all_1.gst-libav}/lib/gstreamer-1.0"
+        # GStreamer paths from NixOS
+        GST_LIBS="${pkgs.gst_all_1.gstreamer.out}/lib/gstreamer-1.0:${pkgs.gst_all_1.gst-plugins-base}/lib/gstreamer-1.0:${pkgs.gst_all_1.gst-plugins-good}/lib/gstreamer-1.0:${pkgs.gst_all_1.gst-plugins-bad}/lib/gstreamer-1.0:${pkgs.gst_all_1.gst-plugins-ugly}/lib/gstreamer-1.0:${pkgs.gst_all_1.gst-libav}/lib/gstreamer-1.0"
         
-        export GST_PLUGIN_SYSTEM_PATH_1_0="$GST_PLUGINS_PATH"
-        export GST_PLUGIN_PATH="$GST_PLUGINS_PATH"
+        # Crucial for GStreamer to find its scanner in NixOS
+        export GST_PLUGIN_SCANNER="${pkgs.gst_all_1.gstreamer.out}/libexec/gstreamer-1.0/gst-plugin-scanner"
+        export GST_PLUGIN_SYSTEM_PATH_1_0="$GST_LIBS"
+        export GST_PLUGIN_PATH="$GST_LIBS"
 
         # WebKit/Wayland/Nvidia workarounds
         export WEBKIT_DISABLE_COMPOSITING_MODE=1
         export WEBKIT_USE_GLX=1
-        export GST_REGISTRY_REUSE_PLUGIN_SCANNER=1
         
-        # In case the AppImage tries to find libgmp and failed
-        export LD_LIBRARY_PATH="${pkgs.gmp}/lib:${pkgs.gnutls}/lib:${pkgs.nettle}/lib:$LD_LIBRARY_PATH"
+        # Force use of system GLib and GStreamer core to avoid "undefined symbol"
+        export LD_LIBRARY_PATH="${pkgs.glib.out}/lib:${pkgs.gst_all_1.gstreamer.out}/lib:${pkgs.gst_all_1.gst-plugins-base}/lib:$LD_LIBRARY_PATH"
 
-        # Check if the AppImage exists before running
         if [[ -f "$APPIMAGE" ]]; then
-          echo "🚀 Запуск Dotify с GStreamer плагинами и WebKit фиксами..."
-          "$APPIMAGE" "$@"
+          echo "🚀 Запуск Dotify через appimage-run с фиксами GStreamer..."
+          # Используем appimage-run для создания FHS окружения
+          ${pkgs.appimage-run}/bin/appimage-run "$APPIMAGE" "$@"
         else
           echo "❌ Ошибка: Не удалось найти $APPIMAGE"
         fi
