@@ -64,6 +64,7 @@
     libdrm
     mesa
     alsa-lib
+    fontconfig
     # Добавьте другие, если Dotify будет ругаться на отсутствие .so файлов
   ];
 }
