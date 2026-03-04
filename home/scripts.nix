@@ -58,8 +58,8 @@
 
         if [[ -f "$APPIMAGE" ]]; then
           echo "🚀 Запуск Dotify через steam-run (FHS) с плагинами GStreamer..."
-          # steam-run — это "золотой стандарт" для AppImage на NixOS
-          ${pkgs.steam-run}/bin/steam-run "$APPIMAGE" "$@"
+          # Используем --appimage-extract-and-run чтобы избежать проблем с FUSE/fusermount в NixOS
+          ${pkgs.steam-run}/bin/steam-run "$APPIMAGE" --appimage-extract-and-run "$@"
         else
           echo "❌ Ошибка: Не удалось найти $APPIMAGE"
         fi
