@@ -79,6 +79,8 @@
     libxml2            # Еще один XML парсер
     curl               # Сетевые запросы
     openssl            # Шифрование и SSL
+    sqlite             # Database for cookies/history
+    libsecret          # Keyring access
     
     # Мультимедиа и звук
     libpulseaudio      # Звук (PulseAudio/Pipewire)
