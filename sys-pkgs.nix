@@ -132,7 +132,13 @@
     libjpeg       # Если в приложении есть обложки альбомов/фото
     libwebp       # Современный формат изображений
     
-    # --- Библиотеки необходимые для запуска Dotify (Electron) ---
+    # --- Библиотеки необходимые для запуска Dotify (Electron/WebKit) ---
+    gmp                # libgmp.so.10
+    gnutls             # libgiognutls.so
+    nettle             # Dependency for gnutls/gmp
+    gst_all_1.gstreamer
+    gst_all_1.gst-plugins-base
+    gst_all_1.gst-plugins-good
     at-spi2-core       # libatspi.so.0
     libXScrnSaver      # libXss.so.1
     cups               # libcups.so.2
