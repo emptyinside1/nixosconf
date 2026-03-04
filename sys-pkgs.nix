@@ -98,6 +98,13 @@
     xorg.libXrender
     xorg.libXtst
     libGL
+    # Рендеринг текста и графики
+    fribidi
+    harfbuzz
+    pango
+    cairo
+    libdatrie
+    libthai
       # Добавьте другие, если Dotify будет ругаться на отсутствие .so файлов
   ];
 }
