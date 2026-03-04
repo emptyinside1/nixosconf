@@ -73,7 +73,7 @@
     overrideFolders = true;     # Применяет настройки папок из конфига
     settings = {
       devices = {
-        "phone" = { id = "HZILBCL-HIVL6CN-VBXONPG-FLWIIEH-R7444QN-JPWIDPG-3ETA364-O7ACIAJ"; };
+        "phone" = { id = "BBB4K52-HWFLJMN-YKSLZ7Q-MLVW2ID-4H26JDG-52F4V4I-D4N7WUX-YSURIAV"; };
       };
       folders = {
         "Obsidian" = {
