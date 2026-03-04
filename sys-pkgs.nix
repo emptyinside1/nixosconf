@@ -134,7 +134,7 @@
     # --- Библиотеки необходимые для запуска Dotify (Electron) ---
     at-spi2-core       # libatspi.so.0
     libXScrnSaver      # libXss.so.1
-    libcups            # libcups.so.2
+    cups               # libcups.so.2
     libnotify          # libnotify.so.4
     gtk3               # libgtk-3.so.0
     gdk-pixbuf         # libgdk_pixbuf-2.0.so.0
@@ -143,6 +143,17 @@
     pciutils           # libpci.so.3
     libva              # libva.so.2
     libv4l             # libv4l2.so.0
+    libgpg-error       # libgpg-error.so.0
+    libgcrypt          # libgcrypt.so.20
+    libevdev           # libevdev.so.2
+    libinput           # libinput.so.10
+    libunwind          # libunwind.so.8
+    libusb1            # libusb-1.0.so.0
+    libkrb5            # libcom_err.so.2, libkrb5.so.3
+    e2fsprogs          # libcom_err.so.2, libss.so.2
+    keyutils           # libkeyutils.so.1
+    libxcrypt          # libcrypt.so.1
+    libxcrypt-legacy   # libcrypt.so.1 (old version if needed)
     # -----------------------------------------------------------
       # Добавьте другие, если Dotify будет ругаться на отсутствие .so файлов
   ];
