@@ -105,16 +105,18 @@
     libxcb-image
     libxcb-keysyms
     libxcb-render-util
-    libxcb-wm
-
-    # НОВЫЕ БИБЛИОТЕКИ (Графика и Безопасность)
-    mesa.gbmlib       # Это даст libgbm.so.1
-    nss               # Network Security Services (нужно для движка Chrome/Electron)
-    nspr              # Netscape Portable Runtime (идет в паре с NSS)
-    atk               # Accessibility Toolkit
-    at-spi2-atk       # Мост для спец. возможностей
+    libxcb-wm    
     wayland            # Если используете GNOME/KDE на Wayland
     libGL
+
+    # НОВЫЕ БИБЛИОТЕКИ (Графика и Безопасность)
+    mesa               # Теперь libgbm обычно здесь или в libgbm
+    libgbm             # На всякий случай добавим прямой пакет
+    nss                # Network Security Services
+    nspr               # Netscape Portable Runtime
+    atk                # Accessibility Toolkit
+    at-spi2-atk       # Мост для спец. возможностей
+  
     # Рендеринг текста и графики
     fribidi
     harfbuzz
