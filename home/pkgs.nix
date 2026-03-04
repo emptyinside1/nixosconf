@@ -10,6 +10,8 @@
     qbittorrent
     qemu
     winboat
+    steam
+    steam-run
     #gearlever
     mpv
     heroic
