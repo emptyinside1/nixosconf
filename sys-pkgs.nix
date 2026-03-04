@@ -99,12 +99,20 @@
     libxinerama
 
     # Новые необходимые библиотеки XCB
-    xorg.libxcb       # Это даст libxcb.so.1
-    xorg.xcbutil      # Часто идет в комплекте
-    xorg.xcbutilimage
-    xorg.xcbutilkeysyms
-    xorg.xcbutilrenderutil
-    xorg.xcbutilwm
+    # Исправленные названия (убираем xorg. и исправляем префиксы)
+    libxcb
+    libxcb-util
+    libxcb-image
+    libxcb-keysyms
+    libxcb-render-util
+    libxcb-wm
+
+    # НОВЫЕ БИБЛИОТЕКИ (Графика и Безопасность)
+    mesa.gbmlib       # Это даст libgbm.so.1
+    nss               # Network Security Services (нужно для движка Chrome/Electron)
+    nspr              # Netscape Portable Runtime (идет в паре с NSS)
+    atk               # Accessibility Toolkit
+    at-spi2-atk       # Мост для спец. возможностей
     wayland            # Если используете GNOME/KDE на Wayland
     libGL
     # Рендеринг текста и графики
