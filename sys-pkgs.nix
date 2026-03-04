@@ -130,6 +130,20 @@
     libpng        # Для обработки иконок и растровых элементов
     libjpeg       # Если в приложении есть обложки альбомов/фото
     libwebp       # Современный формат изображений
+    
+    # --- Библиотеки необходимые для запуска Dotify (Electron) ---
+    at-spi2-core       # libatspi.so.0
+    libXScrnSaver      # libXss.so.1
+    libcups            # libcups.so.2
+    libnotify          # libnotify.so.4
+    gtk3               # libgtk-3.so.0
+    gdk-pixbuf         # libgdk_pixbuf-2.0.so.0
+    libxshmfence       # libxshmfence.so.1
+    libuuid            # libuuid.so.1
+    pciutils           # libpci.so.3
+    libva              # libva.so.2
+    libv4l             # libv4l2.so.0
+    # -----------------------------------------------------------
       # Добавьте другие, если Dotify будет ругаться на отсутствие .so файлов
   ];
 }
