@@ -55,6 +55,9 @@
         # WebKit/Wayland/Nvidia workarounds
         export WEBKIT_DISABLE_COMPOSITING_MODE=1
         export WEBKIT_USE_GLX=1
+        
+        # Добавляем e2fsprogs (для libcom_err.so.2) и другие критические библиотеки в путь
+        export LD_LIBRARY_PATH="${pkgs.e2fsprogs}/lib:${pkgs.libkrb5}/lib:${pkgs.glib.out}/lib:$LD_LIBRARY_PATH"
 
         if [[ -f "$APPIMAGE" ]]; then
           echo "🚀 Запуск Dotify через steam-run (FHS) с плагинами GStreamer..."
