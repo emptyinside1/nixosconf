@@ -85,18 +85,27 @@
     libvorbis          # Аудио-кодеки
   
     # Дополнительные X11 и Wayland зависимости
-    xorg.libXrandr
-    xorg.libXcomposite
-    xorg.libXinerama
+    # Исправленные названия (без xorg.)
+    libx11
+    libxcursor
+    libxdamage
+    libxext
+    libxfixes
+    libxi
+    libxrender
+    libxtst
+    libxrandr
+    libxcomposite
+    libxinerama
+
+    # Новые необходимые библиотеки XCB
+    xorg.libxcb       # Это даст libxcb.so.1
+    xorg.xcbutil      # Часто идет в комплекте
+    xorg.xcbutilimage
+    xorg.xcbutilkeysyms
+    xorg.xcbutilrenderutil
+    xorg.xcbutilwm
     wayland            # Если используете GNOME/KDE на Wayland
-    xorg.libX11
-    xorg.libXcursor
-    xorg.libXdamage
-    xorg.libXext
-    xorg.libXfixes
-    xorg.libXi
-    xorg.libXrender
-    xorg.libXtst
     libGL
     # Рендеринг текста и графики
     fribidi
