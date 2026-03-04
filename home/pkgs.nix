@@ -17,6 +17,7 @@
     heroic
     bottles
     obsidian
+    antigravity
 
     # Терминальные программы.
     zsh
