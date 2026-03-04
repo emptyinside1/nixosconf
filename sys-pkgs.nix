@@ -53,4 +53,17 @@
 
   services.flatpak.enable = true;
 
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    # Базовый набор библиотек, которые нужны почти всем AppImage
+    glib
+    nss
+    nspr
+    atk
+    at-spi2-atk
+    libdrm
+    mesa
+    alsa-lib
+    # Добавьте другие, если Dotify будет ругаться на отсутствие .so файлов
+  ];
 }
