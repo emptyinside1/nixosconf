@@ -15,7 +15,7 @@
     #gearlever
     mpv
     heroic
-    bottles
+    #bottles
     obsidian
     antigravity
 
@@ -32,6 +32,7 @@
     cava
 
     # Завимимости.
+    nodejs
     bat
     gcc
     gnumake
