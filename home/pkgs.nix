@@ -18,6 +18,7 @@
     #bottles
     obsidian
     antigravity
+    (pkgs.callPackage ../pkgs/youtube-music/default.nix {})
 
     # Терминальные программы.
     zsh
@@ -32,6 +33,8 @@
     cava
 
     # Завимимости.
+    bc
+    ffmpeg
     nodejs
     bat
     gcc
