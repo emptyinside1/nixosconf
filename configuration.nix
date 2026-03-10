@@ -18,7 +18,7 @@
       ./hardware-configuration.nix
       ./sys-pkgs.nix
       ./gaming-optimization.nix
-
+      ./modules/nix-ld.nix
     ];
 
   # Bootloader.

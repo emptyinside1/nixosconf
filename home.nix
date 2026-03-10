@@ -11,6 +11,7 @@
     ./home/pkgs.nix
     ./home/dotfiles.nix
     ./home/scripts.nix
+    ./home/gtk.nix
     #./home/fastfetch.nix
     ./home/hyprland.nix
     inputs.zen-browser.homeModules.twilight
