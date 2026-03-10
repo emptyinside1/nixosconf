@@ -69,6 +69,7 @@
 
   programs.zen-browser = {
     enable = true;
+    suppressXdgMigrationWarning = true;
   };
   
   services.syncthing = {
