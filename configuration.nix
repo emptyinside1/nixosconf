@@ -121,13 +121,6 @@
     #media-session.enable = true;
   };
 
-  services.sunshine = {
-    enable = true;
-    autoStart = true;
-    capSysAdmin = true; # Нужно для захвата экрана и ввода
-    openFirewall = true; # Автоматически откроет нужные порты (47984-48010)
-  };
-
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
