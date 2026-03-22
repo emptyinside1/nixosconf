@@ -44,7 +44,7 @@
   networking.dhcpcd.enable = false;
   # For syncthing
   networking.firewall.allowedTCPPorts = [ 8384 22000 ];
-  networking.firewall.allowedUDPPorts = [ 22000 21027 ];
+  networking.firewall.allowedUDPPorts = [ 22000 21027 5353 1900 ];
 
 
   # Set your time zone.
@@ -119,6 +119,13 @@
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
+  };
+
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true; # Нужно для захвата экрана и ввода
+    openFirewall = true; # Автоматически откроет нужные порты (47984-48010)
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
