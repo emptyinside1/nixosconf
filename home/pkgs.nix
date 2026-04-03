@@ -18,6 +18,7 @@
     #bottles
     obsidian
     antigravity
+    discord
     (pkgs.callPackage ../pkgs/youtube-music/default.nix {})
 
     # Терминальные программы.
