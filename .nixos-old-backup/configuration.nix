@@ -136,7 +136,7 @@
   }; 
   
   # 1. Оставляем драйвер (ядро должно видеть устройство)
-  hardware.tuxedo-drivers.enable = true;
+  hardware.tuxedo-keyboard.enable = true;
 
   # 2. ВЫКЛЮЧАЕМ tuxedo-rs (именно он перехватывал управление и мешал)
   hardware.tuxedo-rs.enable = false;
@@ -169,7 +169,7 @@
   };
 
   # No need in password for sudo.
-  security.sudo.wheelNeedsPassword = true;
+  security.sudo.wheelNeedsPassword = false;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -192,7 +192,6 @@
         "nix-command"
 	"flakes"
       ];
-      trusted-users = [ "root" "daniil" ];
     };
     gc = {
       automatic = true;

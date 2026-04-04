@@ -11,7 +11,7 @@ A personalized NixOS configuration repository focused on building a modular, Hyp
     - **Launcher**: Rofi
     - **Notifications**: SwayNotificationCenter (SwayNC)
     - **Terminal**: Kitty
-    - **Wallpapers/Theming**: `swww`, `wallust`, `nwg-look`
+    - **Wallpapers/Theming**: `awww`, `wallust`, `nwg-look`
     - **File Manager**: Thunar
 - **Package Management**: Managed via `flake.nix`, `sys-pkgs.nix`, and `home/pkgs.nix`.
 - **Key Features**:

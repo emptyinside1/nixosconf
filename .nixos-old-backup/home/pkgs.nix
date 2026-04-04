@@ -48,7 +48,7 @@
     nil 
     nixd
     stylua
-    prettier
+    nodePackages.prettier
     tree-sitter
     tmux
     nerd-fonts.jetbrains-mono
@@ -70,6 +70,7 @@
 
   programs.zen-browser = {
     enable = true;
+    suppressXdgMigrationWarning = true;
   };
   
   services.syncthing = {
@@ -82,7 +83,7 @@
       };
       folders = {
         "Obsidian" = {
-          path = "${config.home.homeDirectory}/Documents/Obs";
+          path = "/home/daniil/Documents/Obs";
           devices = [ "phone" ]; # Синхронизировать с телефоном
         };
       };

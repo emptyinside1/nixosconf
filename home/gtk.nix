@@ -25,5 +25,17 @@
       name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
     };
+    # Fix for GTK4 theme warning
+    gtk4.theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome-themes-extra;
+    };
+  };
+
+  # Fix for GTK4 theme warning
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
   };
 }

@@ -47,7 +47,7 @@
       gd = "git diff"; 
 
       # Custom shortcut
-      obs2pdf = "nix-shell -p python3 python3Packages.markdown2 python3Packages.weasyprint --run \"python3 ${config.home.homeDirectory}/Documents/code/py/Obs/obsidian_to_pdf.py ${config.home.homeDirectory}/Documents/Obs ${config.home.homeDirectory}/Documents/Obs/obsidian_full_book.pdf\"";
+      obs2pdf = "nix-shell -p python3 python3Packages.markdown2 python3Packages.weasyprint --run \"python3 /home/daniil/Documents/code/py/Obs/obsidian_to_pdf.py /home/daniil/Documents/Obs /home/daniil/Documents/Obs/obsidian_full_book.pdf\"";
     };
     
     sessionVariables = {

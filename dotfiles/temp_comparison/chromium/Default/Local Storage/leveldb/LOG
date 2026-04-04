@@ -1,5 +1,0 @@
-2025/12/24-00:56:27.924 5 Creating DB /home/daniil/.config/chromium/Default/Local Storage/leveldb since it was missing.
-2025/12/24-00:56:27.943 5 Reusing MANIFEST /home/daniil/.config/chromium/Default/Local Storage/leveldb/MANIFEST-000001
-2025/12/24-00:58:00.389 7 Level-0 table #5: started
-2025/12/24-00:58:00.392 7 Level-0 table #5: 103477 bytes OK
-2025/12/24-00:58:00.395 7 Delete type=0 #3

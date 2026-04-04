@@ -10,7 +10,7 @@ in
     rofi
     swaynotificationcenter
     wlogout
-    swww          # Демон обоев
+    awww          # Демон обоев
     # hyprlock
     hypridle
     hyprpicker
