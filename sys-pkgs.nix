@@ -46,7 +46,11 @@
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
   programs.zsh.enable = true;  
-  programs.amnezia-vpn.enable = true;
+  programs.amnezia-vpn = {
+    enable = true;
+    package = pkgs-stable.amnezia-vpn; # Используем пакет из стабильной ветки
+  };
+ 
 
   services.zapret = {
     enable = false;
