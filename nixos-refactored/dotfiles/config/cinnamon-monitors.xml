@@ -1,0 +1,23 @@
+<monitors version="2">
+  <configuration>
+    <logicalmonitor>
+      <x>0</x>
+      <y>0</y>
+      <scale>1</scale>
+      <primary>yes</primary>
+      <monitor>
+        <monitorspec>
+          <connector>LVDS-1</connector>
+          <vendor>SEC</vendor>
+          <product>0x4442</product>
+          <serial>0x00000000</serial>
+        </monitorspec>
+        <mode>
+          <width>1280</width>
+          <height>800</height>
+          <rate>119.97317504882812</rate>
+        </mode>
+      </monitor>
+    </logicalmonitor>
+  </configuration>
+</monitors>
