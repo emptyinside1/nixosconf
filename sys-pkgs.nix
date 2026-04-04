@@ -19,7 +19,19 @@
       openssh
       python313Packages.pip
       appimage-run
-
+      hyprland-qt-support
+      kdePackages.qtwayland
+      kdePackages.qtdeclarative
+      kdePackages.qt5compat
+      kdePackages.qtremoteobjects
+      kdePackages.qtsvg
+      kdePackages.qtimageformats
+      kdePackages.qtmultimedia
+      kdePackages.qtwebchannel
+      kdePackages.qtpositioning
+      kdePackages.qtstyleplugin-kvantum
+      libsForQt5.qtstyleplugin-kvantum
+      libappindicator
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
