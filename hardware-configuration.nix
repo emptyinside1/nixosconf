@@ -35,11 +35,6 @@
     options = [ "users" "nofail" "exec" ];
   };
 
-  fileSystems."/run/media/daniil/Allsh" = {
-    device = "/dev/disk/by-uuid/bb1be9b6-aef2-4ccc-bd0a-06e27afff487";
-    fsType = "ext4";
-    options = [ "users" "exec" ];
-  };
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
