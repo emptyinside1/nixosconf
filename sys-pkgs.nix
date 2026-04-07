@@ -32,6 +32,7 @@
       kdePackages.qtstyleplugin-kvantum
       libsForQt5.qtstyleplugin-kvantum
       libappindicator
+
   ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

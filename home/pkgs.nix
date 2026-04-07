@@ -27,6 +27,7 @@
     oh-my-zsh
     pkgs-stable.htop
     btop
+    nvtopPackages.nvidia
     unimatrix
     fastfetch
     zapret
