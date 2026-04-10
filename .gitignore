@@ -26,5 +26,4 @@ dotfiles/.cache/nvim/
 # Исключение: храни только конфигурацию
 !dotfiles/.config/nvim/
 dotfiles/temp_comparsion/
-server.nix
-hardware-configuration.nix
+
