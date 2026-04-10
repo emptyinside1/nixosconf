@@ -18,6 +18,7 @@
       ./hardware-configuration.nix
       ./sys-pkgs.nix
       ./gaming-optimization.nix
+      ./server.nix
       ./modules/nix-ld.nix
     ];
 
