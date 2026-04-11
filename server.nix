@@ -9,7 +9,7 @@
     Host homeserver
       # Пока что тут пишем локальный IP ноутбука (узнай его на роутере, обычно начинается на 192.168...)
       HostName 192.168.1.5 
-      User root
+      User admin
       IdentityFile ~/.ssh/id_ed25519 # Это путь к твоему ключу-паролю
       StrictHostKeyChecking accept-new # Чтобы комп не ругался на новые подключения
   '';
