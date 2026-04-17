@@ -72,4 +72,5 @@
   services.flatpak.enable = true;
 
   services.v2raya.enable = true;
+  # services.v2raya.cliPackage = pkgs.xray; # v2ray is also fine, but xray is often preferred
 }
