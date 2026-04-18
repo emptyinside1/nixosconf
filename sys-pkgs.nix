@@ -32,7 +32,12 @@
       kdePackages.qtstyleplugin-kvantum
       libsForQt5.qtstyleplugin-kvantum
       libappindicator
+      android-tools
   ];
+
+  programs.throne.enable = true;
+  programs.throne.tunMode.enable = true;
+  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

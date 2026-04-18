@@ -19,6 +19,8 @@
     obsidian
     antigravity
     discord
+    godot
+    android-studio
     (pkgs.callPackage ../pkgs/youtube-music/default.nix {})
 
     # Терминальные программы.

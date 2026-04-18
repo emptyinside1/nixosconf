@@ -43,6 +43,13 @@
     "8.8.8.8"     # Google DNS
   ];
   networking.dhcpcd.enable = false;
+
+  # Enable systemd-resolved for correct TUN mode DNS handling
+  services.resolved.enable = true;
+
+  # Ensure the TUN kernel module is loaded
+  boot.kernelModules = [ "tun" ];
+
   # For syncthing
   networking.firewall.allowedTCPPorts = [ 8384 22000 ];
   networking.firewall.allowedUDPPorts = [ 22000 21027 5353 1900 ];
@@ -129,13 +136,15 @@
   users.users.daniil = {
     isNormalUser = true;
     description = "daniil";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "adbusers" ];
     shell = pkgs.zsh;
     packages = with pkgs; [
     #  thunderbird
     ];
   }; 
-  
+
+  # Android SDK
+  # programs.adb.enable = true;  
   # 1. Оставляем драйвер (ядро должно видеть устройство)
   hardware.tuxedo-drivers.enable = true;
 

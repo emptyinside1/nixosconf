@@ -43,16 +43,6 @@ let
       echo "❌ Ошибка: Не удалось найти $APPIMAGE"
     fi
   '';
-
-  run-hiddify = pkgs.writeShellScriptBin "run-hiddify" ''
-    APPIMAGE="$HOME/Documents/AppImage/Hiddify-Linux-x64-AppImage.AppImage"
-    if [[ -f "$APPIMAGE" ]]; then
-      echo "🚀 Запуск Hiddify..."
-      ${pkgs.appimage-run}/bin/appimage-run "$APPIMAGE" "$@"
-    else
-      echo "❌ Ошибка: Не удалось найти $APPIMAGE"
-    fi
-  '';
 in
 {
   home.packages = [
@@ -60,17 +50,5 @@ in
     nix-cleanup
     nix-cleanall
     run-dotify
-    run-hiddify
   ];
-
-  xdg.desktopEntries = {
-    hiddify = {
-      name = "Hiddify";
-      exec = "run-hiddify";
-      icon = "hiddify"; # You might need to set an actual icon path or install an icon pack
-      comment = "Hiddify Next AppImage";
-      categories = [ "Network" "Utility" ];
-      terminal = false;
-    };
-  };
 }
