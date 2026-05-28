@@ -37,7 +37,10 @@
   let
     # Переменные для удобства
     system = "x86_64-linux";
-    pkgs-stable = nixpkgs-stable.legacyPackages.${system};
+    pkgs-stable = import nixpkgs-stable {
+      inherit system;
+      config.allowUnfree = true;
+    };
   in
   {
     # Конфигурация для машины с именем "nixos"
