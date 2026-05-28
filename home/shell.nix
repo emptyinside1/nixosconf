@@ -34,7 +34,7 @@
       nixclear = "$HOME/.local/bin/nix-cleanall";
 
       # Быстрые команды
-      cat = "bat";
+      ccat = "bat";
       grep = "grep --color=auto";
       diff = "diff --color=auto";
         

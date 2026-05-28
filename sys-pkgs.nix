@@ -33,6 +33,8 @@
       libsForQt5.qtstyleplugin-kvantum
       libappindicator
       android-tools
+      opencode
+      gnome-network-displays
   ];
 
   programs.throne.enable = true;
@@ -55,7 +57,8 @@
     enable = true;
     package = pkgs-stable.amnezia-vpn; # Используем пакет из стабильной ветки
   };
- 
+
+  services.avahi.enable = true;
 
   services.zapret = {
     enable = false;

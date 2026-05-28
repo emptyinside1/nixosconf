@@ -1,17 +1,18 @@
 { inputs, config, pkgs, pkgs-stable, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
+
   home.packages = with pkgs; [
     # Программы GUI.
     telegram-desktop
-    steam
-    lutris
+    pkgs-stable.lutris
     protonup-qt
     qbittorrent
     qemu
     winboat
-    steam
-    steam-run
+    #steam
+    #steam-run
     #gearlever
     mpv
     heroic
