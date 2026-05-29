@@ -88,20 +88,6 @@
   # services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.cinnamon.enable = true;
 
-  # === Graphics & NVIDIA ===
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.graphics = {
-    enable = true;
-  };
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
-    open = false;
-    nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
-
   # === Hyprland Configuration ===
   programs.hyprland = {
     enable = true;
@@ -118,11 +104,16 @@
     config.common.default = "*";
   };
 
-  # Enable Sunshine - removed from system service
-  # services.sunshine = { ... };
-
+  # Enable Sunshine
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+    openFirewall = true;
+  };
 
   # Configure keymap in X11
+
   services.xserver.xkb = {
     layout = "ru, us";
     variant = "";

@@ -23,19 +23,4 @@
     "$HOME/.local/bin"
     "$HOME/.cargo/bin"
   ];
-
-  systemd.user.services.sunshine = {
-    Unit = {
-      Description = "Sunshine Game Streamer";
-      After = [ "graphical-session.target" ];
-    };
-    Service = {
-      ExecStart = "${pkgs.sunshine}/bin/sunshine";
-      Restart = "on-failure";
-      RestartSec = 5;
-    };
-    Install = {
-      WantedBy = [ "graphical-session.target" ];
-    };
-  };
 }
