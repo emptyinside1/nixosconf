@@ -23,4 +23,9 @@
     "$HOME/.local/bin"
     "$HOME/.cargo/bin"
   ];
+
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+  };
 }

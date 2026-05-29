@@ -104,13 +104,8 @@
     config.common.default = "*";
   };
 
-  # Enable Sunshine
-  services.sunshine = {
-    enable = true;
-    autoStart = true;
-    capSysAdmin = true;
-    openFirewall = true;
-  };
+  # Enable Sunshine - removed from system service
+  # services.sunshine = { ... };
 
 
   # Configure keymap in X11
