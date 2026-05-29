@@ -51,8 +51,8 @@
   boot.kernelModules = [ "tun" ];
 
   # For syncthing
-  networking.firewall.allowedTCPPorts = [ 8384 22000 ];
-  networking.firewall.allowedUDPPorts = [ 22000 21027 5353 1900 ];
+  networking.firewall.allowedTCPPorts = [ 8384 22000 47984 47985 47986 47987 47988 47989 47990 48010 ];
+  networking.firewall.allowedUDPPorts = [ 22000 21027 5353 1900 47998 47999 48000 48010 ];
 
 
   # Set your time zone.
@@ -100,7 +100,7 @@
   # Portals for screen sharing and file picking
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    extraPortals = [ pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-wlr ];
   };
 
 

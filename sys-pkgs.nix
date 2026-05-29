@@ -34,8 +34,10 @@
       libappindicator
       android-tools
       opencode
-      gnome-network-displays
-  ];
+       gnome-network-displays
+       sunshine
+   ];
+
 
   programs.throne.enable = true;
   programs.throne.tunMode.enable = true;
