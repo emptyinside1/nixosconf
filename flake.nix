@@ -47,20 +47,26 @@
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
       modules = [
-        ./configuration.nix  # базовый конфиг системы
+        ./hosts/desktop/default.nix  # базовый конфиг системы
         home-manager.nixosModules.home-manager
         {
+          nixpkgs.config.allowUnfree = true;
+          nixpkgs.overlays = [
+            (final: prev: {
+              stable = pkgs-stable;
+            })
+          ];
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit pkgs-stable inputs zen-browser; };
-          home-manager.users.daniil = import ./home.nix;
+          home-manager.extraSpecialArgs = { inherit inputs zen-browser; };
+          home-manager.users.daniil = import ./modules/home/default.nix;
           home-manager.backupFileExtension = "backup"; 
         }
 
       ];
       # Unstable как дополнительный аргумент в модули.
       specialArgs = {
-        inherit pkgs-stable; 
+        inherit inputs; 
       };
     };
   };
