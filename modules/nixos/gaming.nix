@@ -41,9 +41,6 @@
         enableOffloadCmd = true; # Создает скрипт nvidia-offload
       };
       
-      # ВНИМАНИЕ: Замени эти значения на свои! 
-      # Узнать их можно командой: lspci | grep -E 'VGA|3D'
-      # Формат: BusID "PCI:1:0:0" (пример)
       amdgpuBusId = "PCI:5:0:0"; # Впиши ID встройки AMD
       nvidiaBusId = "PCI:1:0:0"; # Впиши ID дискретки NVIDIA
     };
@@ -122,4 +119,12 @@
   boot.extraModprobeConfig = ''
     options bluetooth disable_ertm=1
   '';
+
+  # Enable Sunshine
+  services.sunshine = {
+    enable = true;
+    autoStart = true;
+    capSysAdmin = true;
+    openFirewall = true;
+  };
 }
