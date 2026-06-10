@@ -1,10 +1,12 @@
 { inputs, config, pkgs, ... }:
-
+let
+  pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${pkgs.system};
+in
 {
   home.packages = with pkgs; [
     # Программы GUI.
     telegram-desktop
-    stable.lutris
+    pkgs-stable.lutris
     protonup-qt
     qbittorrent
     qemu
@@ -23,7 +25,7 @@
     (pkgs.callPackage ../../pkgs/youtube-music/default.nix {})
 
     # Терминальные программы.
-    stable.htop
+    pkgs-stable.htop
     btop
     nvtopPackages.nvidia
     unimatrix
