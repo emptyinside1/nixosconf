@@ -35,7 +35,6 @@
       android-tools
       opencode
        gnome-network-displays
-       sunshine
    ];
 
 

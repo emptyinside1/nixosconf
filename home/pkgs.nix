@@ -1,8 +1,6 @@
 { inputs, config, pkgs, pkgs-stable, ... }:
 
 {
-  nixpkgs.config.allowUnfree = true;
-
   home.packages = with pkgs; [
     # Программы GUI.
     telegram-desktop
@@ -25,9 +23,6 @@
     (pkgs.callPackage ../pkgs/youtube-music/default.nix {})
 
     # Терминальные программы.
-    zsh
-    starship
-    oh-my-zsh
     pkgs-stable.htop
     btop
     nvtopPackages.nvidia
