@@ -14,6 +14,7 @@
     ./home/gtk.nix
     #./home/fastfetch.nix
     ./home/hyprland.nix
+    ./home/opencode-log-cleaner.nix
     inputs.zen-browser.homeModules.twilight
 
   ];
