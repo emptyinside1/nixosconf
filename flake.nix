@@ -35,39 +35,38 @@
 
   outputs = { self, nixpkgs, nixpkgs-stable, home-manager, zen-browser, ... } @inputs:
   let
-    # Переменные для удобства
     system = "x86_64-linux";
-    pkgs-stable = import nixpkgs-stable {
+    pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
+      overlays = [
+        (final: prev: {
+          stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        })
+      ];
     };
   in
   {
     # Конфигурация для машины с именем "nixos"
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;
+      specialArgs = { inherit inputs; };
       modules = [
+        { nixpkgs.pkgs = pkgs; }
         ./hosts/desktop/default.nix  # базовый конфиг системы
         home-manager.nixosModules.home-manager
         {
-          nixpkgs.config.allowUnfree = true;
-          nixpkgs.overlays = [
-            (final: prev: {
-              stable = pkgs-stable;
-            })
-          ];
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit inputs pkgs-stable zen-browser; };
+          home-manager.extraSpecialArgs = { inherit inputs zen-browser; };
           home-manager.users.daniil = import ./modules/home/default.nix;
           home-manager.backupFileExtension = "backup"; 
         }
 
       ];
-      # Unstable как дополнительный аргумент в модули.
-      specialArgs = {
-        inherit inputs; 
-      };
     };
   };
 }

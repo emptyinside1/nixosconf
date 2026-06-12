@@ -1,6 +1,6 @@
 { inputs, config, pkgs, ... }:
 let
-  pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${pkgs.system};
+  pkgs-stable = pkgs.stable;
 in
 {
   home.packages = with pkgs; [
