@@ -19,7 +19,8 @@
       ExecStop = "${pkgs.zapret}/bin/zapret stop";
       Restart = "on-failure";
       # zapret config location
-      WorkingDirectory = "/opt/zapret";
+      # We explicitly do NOT use WorkingDirectory because it must exist BEFORE preStart
+      # Instead, we will handle directory changes inside the scripts or just not rely on it
     };
 
     path = with pkgs; [
@@ -28,8 +29,8 @@
       bash
       gawk
       coreutils
-      gnugrep # Fixed: NixOS uses gnugrep
-      gnused  # Fixed: NixOS uses gnused
+      gnugrep
+      gnused
       curl
       procps
       nftables
@@ -39,6 +40,8 @@
     ];
 
     preStart = ''
+      # This runs before ExecStart. 
+      # Systemd applies WorkingDirectory even to preStart, which causes the failure if it doesn't exist.
       mkdir -p /opt/zapret
       
       cp -f /etc/zapret.conf /opt/zapret/config
