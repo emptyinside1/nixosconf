@@ -11,6 +11,7 @@
       ../../modules/nixos/nix-settings.nix
       ../../modules/nixos/packages.nix
       ../../modules/nix-ld.nix
+      ../../modules/nixos/zapret.nix
     ];
 
   # Bootloader.

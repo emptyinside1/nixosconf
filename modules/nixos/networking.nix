@@ -31,4 +31,12 @@
       IdentityFile ~/.ssh/id_ed25519 # Это путь к твоему ключу-паролю
       StrictHostKeyChecking accept-new # Чтобы комп не ругался на новые подключения
   '';
+
+  # Добавляем настройку для zapret
+  # zapret требует включенного ip_forwarding для некоторых режимов
+  # и определенных параметров ядра для работы с очередями NFQUEUE
+  boot.kernel.sysctl = {
+    "net.ipv4.ip_forward" = 1;
+    "net.ipv6.conf.all.forwarding" = 1;
+  };
 }
