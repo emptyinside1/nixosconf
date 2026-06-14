@@ -21,11 +21,14 @@
         "${pkgs.zapret}/bin/zapret start-fw"
       ];
       
-      # Мультистратегия, объединяющая HTTP, HTTPS (TLS) и HTTP3 (QUIC)
+      # Мультистратегия с учетом Youtube и Rutracker
+      # 1. QUIC (UDP 443): Обычный fake с repeats=2 (сработало на ютубе и рутрекере)
+      # 2. HTTP (TCP 80): hostfakesplit с ttl 5
+      # 3. HTTPS (TCP 443): hostfakesplit с ttl 5
       ExecStart = "${pkgs.zapret}/bin/nfqws --user=nobody --dpi-desync-fwmark=0x40000000 --qnum=200 " +
-                  "--filter-udp=443 --dpi-desync=fake --dpi-desync-repeats=2 --dpi-desync-fake-quic=${pkgs.zapret}/usr/share/zapret/files/fake/quic_initial_www_google_com.bin --new " +
-                  "--filter-tcp=80 --dpi-desync=fakedsplit --dpi-desync-ttl=6 --dpi-desync-split-pos=method+2 --dpi-desync-fakedsplit-mod=altorder=1 --new " +
-                  "--filter-tcp=443 --dpi-desync=fake --dpi-desync-ttl=6 --orig-ttl=1 --orig-mod-start=s1 --orig-mod-cutoff=d1";
+                  "--filter-udp=443 --dpi-desync=fake --dpi-desync-repeats=2 --new " +
+                  "--filter-tcp=80 --dpi-desync=hostfakesplit --dpi-desync-ttl=5 --new " +
+                  "--filter-tcp=443 --dpi-desync=hostfakesplit --dpi-desync-ttl=5";
       
       ExecStopPost = "${pkgs.zapret}/bin/zapret stop-fw";
     };
