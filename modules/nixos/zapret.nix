@@ -1,10 +1,8 @@
 { config, pkgs, ... }:
 
 {
-  # Install zapret package
   environment.systemPackages = [ pkgs.zapret ];
 
-  # Configure zapret service
   systemd.services.zapret = {
     description = "Zapret DPI bypass service";
     after = [ "network-online.target" "syslog.target" ];
@@ -23,8 +21,11 @@
         "${pkgs.zapret}/bin/zapret start-fw"
       ];
       
-      # Запускаем nfqws напрямую, чтобы systemd его видел и не убивал!
-      ExecStart = "${pkgs.zapret}/bin/nfqws --user=nobody --dpi-desync-fwmark=0x40000000 --qnum=200 --dpi-desync=fake --dpi-desync-ttl=6";
+      # Мультистратегия, объединяющая HTTP, HTTPS (TLS) и HTTP3 (QUIC)
+      ExecStart = "${pkgs.zapret}/bin/nfqws --user=nobody --dpi-desync-fwmark=0x40000000 --qnum=200 " +
+                  "--filter-udp=443 --dpi-desync=fake --dpi-desync-repeats=2 --dpi-desync-fake-quic=${pkgs.zapret}/usr/share/zapret/files/fake/quic_initial_www_google_com.bin --new " +
+                  "--filter-tcp=80 --dpi-desync=fakedsplit --dpi-desync-ttl=6 --dpi-desync-split-pos=method+2 --dpi-desync-fakedsplit-mod=altorder=1 --new " +
+                  "--filter-tcp=443 --dpi-desync=fake --dpi-desync-ttl=6 --orig-ttl=1 --orig-mod-start=s1 --orig-mod-cutoff=d1";
       
       ExecStopPost = "${pkgs.zapret}/bin/zapret stop-fw";
     };
@@ -46,14 +47,12 @@
     ];
   };
 
-  # Provide configuration file via environment.etc
   environment.etc."zapret.conf".text = ''
     ZAPRET_BASE="${pkgs.zapret}/usr/share/zapret"
     ZAPRET_RW="/opt/zapret"
     FWTYPE="iptables"
     MODE="nfqws"
     MODE_FILTER="none"
-    NFQWS_OPT_DESYNC="--dpi-desync=fake --dpi-desync-ttl=6"
     NFQWS_PORTS_TCP="80,443"
     NFQWS_PORTS_UDP="443"
     WS_USER="nobody"
