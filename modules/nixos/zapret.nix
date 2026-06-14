@@ -12,12 +12,10 @@
     wantedBy = [ "multi-user.target" ];
 
     serviceConfig = {
-      Type = "simple"; # Changed to simple
-      # Use the main daemon script directly instead of the init script wrapper
-      # This keeps the process in foreground so systemd can track it
-      ExecStart = "${pkgs.zapret}/bin/zapret start-daemons"; 
+      Type = "oneshot"; # Changed to oneshot since it manage background daemons
+      RemainAfterExit = true;
+      ExecStart = "${pkgs.zapret}/bin/zapret start";
       ExecStop = "${pkgs.zapret}/bin/zapret stop";
-      Restart = "on-failure";
     };
 
     path = with pkgs; [
@@ -42,14 +40,6 @@
       touch /opt/zapret/ipset-exclude.txt
       touch /opt/zapret/ipset-whitelist.txt
       touch /opt/zapret/hostlist.txt
-      
-      # Apply firewall rules before starting daemons
-      ${pkgs.zapret}/bin/zapret start-fw
-    '';
-
-    postStop = ''
-      # Clean up firewall rules after stopping
-      ${pkgs.zapret}/bin/zapret stop-fw
     '';
   };
 
