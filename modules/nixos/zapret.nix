@@ -21,14 +21,11 @@
         "${pkgs.zapret}/bin/zapret start-fw"
       ];
       
-      # Мультистратегия с учетом Youtube и Rutracker
-      # 1. QUIC (UDP 443): Обычный fake с repeats=2 (сработало на ютубе и рутрекере)
-      # 2. HTTP (TCP 80): hostfakesplit с ttl 5
-      # 3. HTTPS (TCP 443): hostfakesplit с ttl 5
+      # Новая, более агрессивная мультистратегия
       ExecStart = "${pkgs.zapret}/bin/nfqws --user=nobody --dpi-desync-fwmark=0x40000000 --qnum=200 " +
-                  "--filter-udp=443 --dpi-desync=fake --dpi-desync-repeats=2 --new " +
-                  "--filter-tcp=80 --dpi-desync=hostfakesplit --dpi-desync-ttl=5 --new " +
-                  "--filter-tcp=443 --dpi-desync=hostfakesplit --dpi-desync-ttl=5";
+                  "--filter-udp=443 --dpi-desync=fake --dpi-desync-repeats=6 --new " +
+                  "--filter-tcp=80 --dpi-desync=fake,split2 --dpi-desync-ttl=5 --new " +
+                  "--filter-tcp=443 --dpi-desync=fake,disorder --dpi-desync-ttl=5 --dpi-desync-autottl=2";
       
       ExecStopPost = "${pkgs.zapret}/bin/zapret stop-fw";
     };
@@ -60,8 +57,6 @@
     NFQWS_PORTS_UDP="443"
     WS_USER="nobody"
     DISABLE_IPV6=0
-    IFACE_LAN=""
-    IFACE_WAN=""
     INIT_APPLY_FW=1
     PIDDIR="/opt/zapret"
     NFQWS="${pkgs.zapret}/bin/nfqws"
