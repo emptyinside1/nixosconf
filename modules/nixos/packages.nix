@@ -40,14 +40,6 @@
     package = pkgs.stable.amnezia-vpn; # Используем пакет из стабильной ветки через pkgs.stable
   };
 
-  services.zapret = {
-    enable = false;
-    httpSupport = true;
-    httpMode = "full";
-    configureFirewall = true;
-    params = [ "--dpi-desync=fake" "--dpi-desync-fooling=datanoack" ];
-  };
-
   services.openssh = {
     enable = true;
     settings = {

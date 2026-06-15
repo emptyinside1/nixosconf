@@ -1,68 +1,38 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = [ pkgs.zapret ];
-
-  systemd.services.zapret = {
-    description = "Zapret DPI bypass service";
-    after = [ "network-online.target" "syslog.target" ];
-    wants = [ "network-online.target" ];
-    wantedBy = [ "multi-user.target" ];
-
-    serviceConfig = {
-      Type = "simple";
-      Restart = "always";
-      RestartSec = "5";
-      
-      ExecStartPre = [
-        "${pkgs.coreutils}/bin/mkdir -p /opt/zapret"
-        "${pkgs.coreutils}/bin/cp -f /etc/zapret.conf /opt/zapret/config"
-        "${pkgs.coreutils}/bin/touch /opt/zapret/ipset-exclude.txt /opt/zapret/ipset-whitelist.txt /opt/zapret/hostlist.txt"
-        "${pkgs.zapret}/bin/zapret start-fw"
-      ];
-      
-      # Полностью пересмотренная стратегия.
-      # Убираем multisplit (может глючить) и пробуем чистый fake+split2 с disorder.
-      # Это часто работает на мобильных и домашних провайдерах.
-      ExecStart = "${pkgs.zapret}/bin/nfqws --user=nobody --dpi-desync-fwmark=0x40000000 --qnum=200 " +
-                  "--filter-udp=443 --dpi-desync=fake --dpi-desync-repeats=6 --new " +
-                  "--filter-tcp=80 --dpi-desync=fake,split2 --dpi-desync-ttl=5 --new " +
-                  "--filter-tcp=443 --dpi-desync=fake,split2 --dpi-desync-ttl=5 --dpi-desync-fooling=badsum";
-      
-      ExecStopPost = "${pkgs.zapret}/bin/zapret stop-fw";
+  # Настройка DNS over HTTPS (исправлен синтаксис для NixOS 26.05)
+  services.resolved = {
+    enable = true;
+    settings = {
+      Resolve = {
+        DNSSEC = "true";
+        Domains = "~.";
+        FallbackDNS = "1.1.1.1 8.8.8.8";
+        DNSOverHTTPS = "yes";
+      };
     };
+  };
 
-    path = with pkgs; [
-      iptables
-      iproute2
-      bash
-      gawk
-      coreutils
-      gnugrep
-      gnused
-      curl
-      procps
-      nftables
-      ipset
-      which
-      kmod
+  # Используем встроенный модуль NixOS! 
+  # Да, он уже есть в unstable ветке, которую ты используешь.
+  services.zapret = {
+    enable = true;
+    configureFirewall = true;
+    
+    # Настройки для TCP (80, 443) и UDP (443)
+    httpSupport = true; # TCP 80
+    udpSupport = true;  # UDP 443 (QUIC)
+    udpPorts = [ "443" ];
+    
+    # Передаем параметры напрямую в nfqws
+    # Стратегия, которая сработала для Youtube в твоем логе: fake,multisplit + midsld
+    params = [
+      "--filter-udp=443 --dpi-desync=fake --dpi-desync-repeats=2 --dpi-desync-fake-quic=${pkgs.zapret}/usr/share/zapret/files/fake/quic_initial_www_google_com.bin --new"
+      "--filter-tcp=80,443 --dpi-desync=fake,multisplit --dpi-desync-ttl=5 --dpi-desync-split-pos=midsld"
     ];
   };
 
-  environment.etc."zapret.conf".text = ''
-    ZAPRET_BASE="${pkgs.zapret}/usr/share/zapret"
-    ZAPRET_RW="/opt/zapret"
-    FWTYPE="iptables"
-    MODE="nfqws"
-    MODE_FILTER="none"
-    NFQWS_PORTS_TCP="80,443"
-    NFQWS_PORTS_UDP="443"
-    WS_USER="nobody"
-    DISABLE_IPV6=0
-    INIT_APPLY_FW=1
-    PIDDIR="/opt/zapret"
-    NFQWS="${pkgs.zapret}/bin/nfqws"
-    TPWS="${pkgs.zapret}/bin/tpws"
-    IPSET_CR="$ZAPRET_BASE/ipset/create_ipset.sh"
-  '';
+  # Мы удаляем кастомный systemd.services.zapret и environment.etc,
+  # так как встроенный модуль services.zapret сделает всё сам.
 }
