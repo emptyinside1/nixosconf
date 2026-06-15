@@ -21,11 +21,13 @@
         "${pkgs.zapret}/bin/zapret start-fw"
       ];
       
-      # Новая, более агрессивная мультистратегия
+      # Полностью пересмотренная стратегия.
+      # Убираем multisplit (может глючить) и пробуем чистый fake+split2 с disorder.
+      # Это часто работает на мобильных и домашних провайдерах.
       ExecStart = "${pkgs.zapret}/bin/nfqws --user=nobody --dpi-desync-fwmark=0x40000000 --qnum=200 " +
                   "--filter-udp=443 --dpi-desync=fake --dpi-desync-repeats=6 --new " +
                   "--filter-tcp=80 --dpi-desync=fake,split2 --dpi-desync-ttl=5 --new " +
-                  "--filter-tcp=443 --dpi-desync=fake,disorder --dpi-desync-ttl=5 --dpi-desync-autottl=2";
+                  "--filter-tcp=443 --dpi-desync=fake,split2 --dpi-desync-ttl=5 --dpi-desync-fooling=badsum";
       
       ExecStopPost = "${pkgs.zapret}/bin/zapret stop-fw";
     };
