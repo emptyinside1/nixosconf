@@ -38,5 +38,6 @@ dotfiles/config/hypr/wallpaper_effects/.wallpaper_*
 *~
 *.bak
 
-# ---- Временные директории ----
+# ---- Временные директории (старая опечатка и правильное название) ----
+dotfiles/temp_comparison/
 dotfiles/temp_comparsion/
