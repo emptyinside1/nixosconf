@@ -1,0 +1,9 @@
+# Бинарные файлы (отключаем diff)
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.svg  binary
+*.ico  binary
+*.deb  binary
+*.rpm  binary
+*.AppImage binary

@@ -1,29 +1,42 @@
-# Результаты сборки
+# ============================================================
+# NixOS Configuration .gitignore
+# ============================================================
+
+# ---- Результаты сборки Nix ----
 result
 result-*
 
-# Hardware configuration (может содержать специфичные для машины данные)
-# Решишь сам, включать ли его
-# hardware-configuration.nix
+# ---- Аппаратная конфигурация (содержит UUID дисков) ----
+hardware-configuration.nix
 
-# Временные файлы
-*.swp
-*.swo
-*~
+# ---- Старый бэкап конфига (111 МБ) ----
+.nixos-old-backup/
 
-# Секреты (если используешь)
+# ---- Секреты ----
 secrets/
 *.age
 *.key
-dotfiles/.local/share/nvim/lazy/
-dotfiles/.local/share/nvim/lazy/*
 
-# Neovim временные файлы
+# ---- Neovim (кэш, стейт, плагины) ----
 dotfiles/.local/share/nvim/
 dotfiles/.local/state/nvim/
 dotfiles/.cache/nvim/
-
-# Исключение: храни только конфигурацию
+# Но храним саму конфигурацию Neovim
 !dotfiles/.config/nvim/
-dotfiles/temp_comparsion/
 
+# ---- Обои (бинарные, тяжелые) ----
+dotfiles/config/hypr/wallpaper_effects/.wallpaper_*
+
+# ---- Бинарные пакеты ----
+*.deb
+*.rpm
+*.AppImage
+
+# ---- Временные и бэкап-файлы ----
+*.swp
+*.swo
+*~
+*.bak
+
+# ---- Временные директории ----
+dotfiles/temp_comparsion/

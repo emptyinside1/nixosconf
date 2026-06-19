@@ -1,7 +1,7 @@
-# ~/nixos/sync.sh
 #!/usr/bin/env bash
+# ~/.nixos/sync.sh — синхронизация конфига с GitHub
 
-cd ~/nixos
+cd ~/.nixos
 
 # Добавить изменения
 git add .

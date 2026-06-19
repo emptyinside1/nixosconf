@@ -30,6 +30,18 @@
     lidSwitchDocked = "ignore";
   };
 
+  # Полностью отключаем цели (targets) systemd, отвечающие за сон и гибернацию.
+  # Это железная гарантия того, что ОС не попытается уснуть сама.
+  systemd.targets.sleep.enable = false;
+  systemd.targets.suspend.enable = false;
+  systemd.targets.hibernate.enable = false;
+  systemd.targets.hybrid-sleep.enable = false;
+  
+  # На всякий случай отключаем действия по критическому разряду батареи, 
+  # так как на старых ноутбуках контроллер батареи часто глючит и шлет ложные сигналы.
+  services.upower.enable = true;
+  services.upower.percentageAction = 0; # Игнорировать критический заряд
+
   # =====================================================================
   # 3. СЕТЬ И БЕЗОПАСНЫЙ УДАЛЕННЫЙ ДОСТУП (TAILSCALE)
   # =====================================================================
