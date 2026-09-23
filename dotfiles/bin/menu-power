@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SELECTION="$(printf "1. Lock\n2. Suspend\n3. Logout\n4. Reboot\n5. Poweroff\n6. Hibernate" | fuzzel --dmenu --lines 6 --prompt "SYSTEM > ")"
+
+case "$SELECTION" in
+  "1. Lock") swaylock -f -c 0d0d0d ;;
+  "2. Suspend") systemctl suspend ;;
+  "3. Logout") niri msg action quit --skip-confirmation ;;
+  "4. Reboot") systemctl reboot ;;
+  "5. Poweroff") systemctl poweroff ;;
+  "6. Hibernate") systemctl hibernate;;
+esac

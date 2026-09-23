@@ -1,0 +1,247 @@
+// Niri Configuration (Brutalist Monochrome)
+// Disabling focus-ring and border, setting active opacity 1.0, inactive opacity 0.85
+
+prefer-no-csd
+
+output "eDP-2" {
+    mode "2560x1440@165.000"
+    scale 1.0
+    variable-refresh-rate
+}
+output "eDP-1" {
+    scale 1.0
+}
+output "HDMI-A-1" {
+    scale 1.0
+}
+output "DP-1" {
+    scale 1.0
+}
+output "DP-2" {
+    scale 1.0
+}
+
+input {
+    focus-follows-mouse max-scroll-amount="0%"
+    keyboard {
+        xkb {
+            layout "us,ru"
+            options "grp:win_space_toggle"
+        }
+        repeat-delay 300
+        repeat-rate 50
+    }
+    touchpad {
+        tap
+        natural-scroll
+    }
+    mouse {
+        accel-speed 0.0
+    }
+}
+
+layout {
+    gaps 10
+    center-focused-column "never"
+    default-column-width { proportion 0.33333; }
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        proportion 1.0
+    }
+    focus-ring {
+        off
+    }
+    border {
+        off
+    }
+}
+
+window-rule {
+    match is-active=false
+    opacity 0.95
+}
+
+window-rule {
+    match app-id="^mpv$"
+    match app-id="^vlc$"
+    match title=".*YouTube.*"
+    opacity 1.0
+}
+
+window-rule {
+    match app-id="pavucontrol"
+    match app-id="nm-connection-editor"
+    match app-id="blueman-manager"
+    open-floating true
+}
+
+window-rule {
+    match app-id="^dropdown-terminal$"
+    open-floating true
+    default-column-width { proportion 0.75; }
+    default-window-height { proportion 0.6; }
+}
+
+window-rule {
+    match app-id="^dota2$"
+    match app-id="^steam_app_"
+    match app-id="^gamescope$"
+    match app-id="^wine$"
+    match app-id=".*\\.exe$"
+    match app-id="^lutris$"
+    match app-id="^heroic$"
+    match app-id="^com\\.heroicgameslauncher\\.hgl$"
+    match app-id="^net\\.lutris\\.Lutris$"
+    match app-id="^bottles$"
+    match app-id="^com\\.usebottles\\.bottles$"
+    match app-id="^Ryujinx$"
+    match app-id="^org\\.ryujinx\\.Ryujinx$"
+    match app-id="^PrismLauncher$"
+    match app-id="^org\\.prismlauncher\\.PrismLauncher$"
+    geometry-corner-radius 0.0
+    clip-to-geometry false
+    opacity 1.0
+}
+
+window-rule {
+    geometry-corner-radius 8.0
+    clip-to-geometry true
+}
+
+// Spawn startup services
+spawn-at-startup "xwayland-satellite"
+spawn-at-startup "sh" "-c" "waybar -c $HOME/.config/niri/waybar/config.jsonc -s $HOME/.config/niri/waybar/style.css"
+spawn-at-startup "sh" "-c" "pkill -9 swaync 2>/dev/null || true; mako -c $HOME/.config/niri/mako/config"
+spawn-at-startup "sh" "-c" "awww-daemon &"
+spawn-at-startup "restore-wallpaper"
+spawn-at-startup "sh" "-c" "[ -x /home/daniil/.local/bin/openvoice-daemon.sh ] && sleep 3 && env WAYLAND_DISPLAY=wayland-1 DISPLAY=:0 /home/daniil/.local/bin/openvoice-daemon.sh &"
+spawn-at-startup "sh" "-c" "/run/current-system/sw/libexec/polkit-gnome-authentication-agent-1 &"
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+spawn-at-startup "nm-applet" "--indicator"
+spawn-at-startup "sh" "-c" "battery-notifier &"
+
+binds {
+    // Mouse wheel navigation
+    Mod+WheelScrollDown      { focus-column-right; }
+    Mod+WheelScrollUp        { focus-column-left; }
+    Mod+Shift+WheelScrollDown { focus-workspace-down; }
+    Mod+Shift+WheelScrollUp   { focus-workspace-up; }
+    Mod+Ctrl+WheelScrollDown  { move-column-right; }
+    Mod+Ctrl+WheelScrollUp    { move-column-left; }
+    // App launching
+    Mod+Return { spawn "alacritty"; }
+    Mod+Space { spawn "notify-layout"; }
+    Mod+E { spawn "alacritty" "-e" "yazi"; }
+    Mod+D { spawn "fuzzel"; }
+    Mod+Shift+Space { toggle-window-floating; }
+    Mod+B { spawn "xdg-open" "https://"; }
+
+    // Column stacking & vertical management
+    Mod+BracketLeft { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+    Mod+Comma { consume-window-into-column; }
+    Mod+Period { expel-window-from-column; }
+    Mod+Ctrl+Down { move-window-down; }
+    Mod+Ctrl+Up { move-window-up; }
+
+    // Menus and Scripts
+    Mod+Alt+V { spawn "menu-clipboard"; }
+    Mod+S { spawn "menu-websearch"; }
+    Mod+Ctrl+S { spawn "menu-windows"; }
+    Mod+Shift+Q { spawn "kill-active-process"; }
+    Mod+grave { spawn "dropdown-terminal"; }
+    Mod+W { spawn "menu-wallpaper"; }
+    Mod+C { spawn "menu-configs"; }
+    Mod+F1 { spawn "menu-keybinds"; }
+    Ctrl+Alt+P { spawn "menu-power"; }
+    Mod+Shift+E { spawn "menu-power"; }
+    Mod+Escape { spawn "menu-power"; }
+
+    // Window / Column management
+    Mod+Q { close-window; }
+    Mod+Shift+C { center-column; }
+    Mod+R { switch-preset-column-width; }
+    Mod+F { maximize-column; }
+    Mod+Ctrl+F { maximize-column; }
+    Mod+Shift+F { fullscreen-window; }
+    Mod+Shift+O { toggle-window-rule-opacity; }
+
+    // Floating window focus
+    Mod+Tab { switch-focus-between-floating-and-tiling; }
+    Mod+Shift+Tab { switch-focus-between-floating-and-tiling; }
+
+    // Column navigation & movements
+    Mod+H { focus-column-left; }
+    Mod+L { focus-column-right; }
+    Mod+J { focus-window-down; }
+    Mod+K { focus-window-up; }
+    Mod+Left { focus-column-left; }
+    Mod+Right { focus-column-right; }
+    Mod+Down { focus-window-down; }
+    Mod+Up { focus-window-up; }
+    Mod+Shift+H { move-column-left; }
+    Mod+Shift+L { move-column-right; }
+    Mod+Shift+J { move-window-down; }
+    Mod+Shift+K { move-window-up; }
+
+    // Move on Ctrl+Arrows
+    Mod+Ctrl+Left { move-column-left; }
+    Mod+Ctrl+Right { move-column-right; }
+
+    // Resize on Shift+Arrows
+    Mod+Shift+Left { set-column-width "-10%"; }
+    Mod+Shift+Right { set-column-width "+10%"; }
+    Mod+Shift+Up { set-window-height "-10%"; }
+    Mod+Shift+Down { set-window-height "+10%"; }
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+
+    // Workspaces 1..9
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
+
+    // Media & Hardware
+    XF86AudioRaiseVolume allow-when-locked=true { spawn "change-volume" "up"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn "change-volume" "down"; }
+    XF86AudioMute allow-when-locked=true { spawn "change-volume" "mute"; }
+    XF86AudioMicMute allow-when-locked=true { spawn "change-volume" "mic-mute"; }
+    XF86AudioPlay allow-when-locked=true { spawn "playerctl" "play-pause"; }
+    XF86AudioNext allow-when-locked=true { spawn "playerctl" "next"; }
+    XF86AudioPrev allow-when-locked=true { spawn "playerctl" "previous"; }
+    XF86MonBrightnessUp allow-when-locked=true { spawn "change-brightness" "up"; }
+    XF86MonBrightnessDown allow-when-locked=true { spawn "change-brightness" "down"; }
+    XF86KbdBrightnessUp { spawn "brightnessctl" "--device=*kbd*" "set" "1+"; }
+    XF86KbdBrightnessDown { spawn "brightnessctl" "--device=*kbd*" "set" "1-"; }
+    XF86Launch1 { spawn "sh" "-c" "command -v rog-control-center >/dev/null && rog-control-center || true"; }
+    XF86Launch3 { spawn "sh" "-c" "command -v asusctl >/dev/null && asusctl led-mode -n || true"; }
+    XF86Launch4 { spawn "sh" "-c" "command -v asusctl >/dev/null && asusctl profile -n || true"; }
+    XF86Rfkill { spawn "sh" "-c" "rfkill block all || rfkill unblock all"; }
+
+    // Screenshots
+    Print { spawn "shot-region"; }
+    Alt+Print { spawn "shot-active"; }
+    Alt+F6 { spawn "shot-active"; }
+    Mod+F6 { spawn "shot-region"; }
+    Mod+Print { spawn "shot-full"; }
+    Mod+Shift+S { spawn "shot-region"; }
+}

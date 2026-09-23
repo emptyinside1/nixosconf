@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SAVE_DIR="$HOME/Pictures/Screenshots"
+mkdir -p "$SAVE_DIR"
+
+TIMESTAMP=$(date +'%Y-%m-%d_%H-%M-%S')
+FILE_PATH="$SAVE_DIR/screenshot_${TIMESTAMP}.png"
+
+grim - | tee "$FILE_PATH" | wl-copy --type image/png
+notify-send "Screenshot" "Fullscreen copied to clipboard & saved to $FILE_PATH"

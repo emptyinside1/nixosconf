@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+FOCUSED=$(niri msg -j focused-window 2>/dev/null || echo "null")
+
+if [[ "$FOCUSED" != "null" && -n "$FOCUSED" ]]; then
+    # Window layout geometry x,y,w,h
+    X=$(echo "$FOCUSED" | jq -r '.layout.output_offset[0] // empty')
+    Y=$(echo "$FOCUSED" | jq -r '.layout.output_offset[1] // empty')
+    W=$(echo "$FOCUSED" | jq -r '.layout.tile_size[0] // empty')
+    H=$(echo "$FOCUSED" | jq -r '.layout.tile_size[1] // empty')
+
+    # Fallback to general geometry if layout output_offset / tile_size is missing
+    if [[ -z "$X" || -z "$Y" || -z "$W" || -z "$H" ]]; then
+        X=$(echo "$FOCUSED" | jq -r '.x // empty')
+        Y=$(echo "$FOCUSED" | jq -r '.y // empty')
+        W=$(echo "$FOCUSED" | jq -r '.width // empty')
+        H=$(echo "$FOCUSED" | jq -r '.height // empty')
+    fi
+
+    if [[ -n "$X" && -n "$Y" && -n "$W" && -n "$H" && "$W" -gt 0 && "$H" -gt 0 ]]; then
+        SAVE_DIR="$HOME/Pictures/Screenshots"
+        mkdir -p "$SAVE_DIR"
+        TIMESTAMP=$(date +'%Y-%m-%d_%H-%M-%S')
+        FILE_PATH="$SAVE_DIR/screenshot_active_${TIMESTAMP}.png"
+
+        grim -g "${X},${Y} ${W}x${H}" - | tee "$FILE_PATH" | wl-copy --type image/png
+        notify-send "Screenshot" "Active window copied to clipboard & saved to $FILE_PATH"
+        exit 0
+    fi
+fi
+
+# Fallback to shot-region
+exec shot-region

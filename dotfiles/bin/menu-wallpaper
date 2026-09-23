@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+WALLPAPER_DIR="$HOME/Pictures/wallpapers"
+STATE_FILE="$HOME/.local/state/current_wallpaper"
+mkdir -p "$WALLPAPER_DIR" "$(dirname "$STATE_FILE")"
+
+if [[ ! -d "$WALLPAPER_DIR" ]] || [[ -z "$(ls -A "$WALLPAPER_DIR" 2>/dev/null)" ]]; then
+    notify-send "Wallpaper" "No wallpapers found in $WALLPAPER_DIR"
+    exit 0
+fi
+
+SELECTED=$(find "$WALLPAPER_DIR" -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.gif" -o -iname "*.webp" \) -exec basename {} \; | sort | fuzzel --dmenu --prompt="Wallpaper > ")
+
+if [[ -z "$SELECTED" ]]; then
+    exit 0
+fi
+
+WALLPAPER="$WALLPAPER_DIR/$SELECTED"
+echo "$WALLPAPER" > "$STATE_FILE"
+
+if ! pgrep -x awww-daemon >/dev/null; then
+    awww-daemon &
+    sleep 0.5
+fi
+
+awww img "$WALLPAPER" --resize crop --transition-type simple --transition-fps 60

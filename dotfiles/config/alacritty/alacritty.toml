@@ -1,0 +1,45 @@
+[window]
+decorations = "None"
+padding = { x = 12, y = 12 }
+opacity = 1.0
+
+[font]
+normal = { family = "JetBrains Mono", style = "Regular" }
+size = 15.0
+
+[colors.primary]
+background = "#0d0d0d"
+foreground = "#e6e6e6"
+
+[colors.cursor]
+text = "#0d0d0d"
+cursor = "#ffffff"
+
+[colors.normal]
+black   = "#1a1a1a"
+red     = "#777777"
+green   = "#999999"
+yellow  = "#aaaaaa"
+blue    = "#888888"
+magenta = "#cccccc"
+cyan    = "#bbbbbb"
+white   = "#e6e6e6"
+
+[colors.bright]
+black   = "#333333"
+red     = "#888888"
+green   = "#aaaaaa"
+yellow  = "#bbbbbb"
+blue    = "#999999"
+magenta = "#dddddd"
+cyan    = "#cccccc"
+white   = "#ffffff"
+
+[keyboard]
+bindings = [
+  { key = "C", mods = "Control|Shift", action = "Copy" },
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+  { key = "Insert", mods = "Shift", action = "PasteSelection" },
+  { key = "C", mods = "Control", chars = "\x03" },
+  { key = "V", mods = "Control", chars = "\x16" }
+]

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+QUERY=$(fuzzel --dmenu --prompt="Web Search > " --lines=0 || true)
+if [[ -z "$QUERY" ]]; then
+    exit 0
+fi
+
+ENCODED=$(python3 -c "import urllib.parse, sys; print(urllib.parse.quote(sys.argv[1]))" "$QUERY")
+xdg-open "https://www.google.com/search?q=$ENCODED"

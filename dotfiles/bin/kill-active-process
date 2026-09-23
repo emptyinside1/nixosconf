@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+FOCUSED=$(niri msg -j focused-window 2>/dev/null || echo "null")
+if [[ "$FOCUSED" == "null" || -z "$FOCUSED" ]]; then
+    exit 0
+fi
+
+PID=$(echo "$FOCUSED" | jq -r '.pid // empty')
+
+if [[ -n "$PID" && "$PID" != "null" ]]; then
+    kill -9 "$PID" 2>/dev/null || true
+else
+    niri msg action close-window
+fi

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+WINDOWS=$(niri msg -j windows 2>/dev/null || echo "[]")
+if [[ "$WINDOWS" == "[]" || -z "$WINDOWS" ]]; then
+    exit 0
+fi
+
+SELECTION=$(echo "$WINDOWS" | jq -r '.[] | "\(.id): \(.app_id // "window") - \(.title)"' | fuzzel --dmenu --prompt="Switch Window > " --width=65 --lines=12 || true)
+
+if [[ -n "$SELECTION" ]]; then
+    ID=$(echo "$SELECTION" | cut -d':' -f1)
+    if [[ -n "$ID" ]]; then
+        niri msg action focus-window --id "$ID"
+    fi
+fi

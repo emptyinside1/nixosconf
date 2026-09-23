@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+WINDOWS=$(niri msg -j windows 2>/dev/null || echo "[]")
+DROPDOWN=$(echo "$WINDOWS" | jq -r '.[] | select(.app_id == "dropdown-terminal") | .id' | head -n1 || true)
+
+if [[ -n "$DROPDOWN" ]]; then
+    # Window exists, toggle: if focused, close it; else focus it
+    FOCUSED_ID=$(niri msg -j focused-window 2>/dev/null | jq -r '.id // empty' || true)
+    if [[ "$FOCUSED_ID" == "$DROPDOWN" ]]; then
+        niri msg action close-window
+    else
+        niri msg action focus-window --id "$DROPDOWN"
+    fi
+else
+    alacritty --class dropdown-terminal &
+fi

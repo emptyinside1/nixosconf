@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+STEP="5%"
+
+case "${1:-}" in
+  up)
+    wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ "$STEP"+
+    ;;
+  down)
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ "$STEP"-
+    ;;
+  mute)
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+    ;;
+  mic-mute)
+    wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+    ;;
+  *)
+    echo "Usage: $0 {up|down|mute|mic-mute}"
+    exit 1
+    ;;
+esac
+
+# Get current volume info
+VOL_RAW="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ 2>/dev/null || echo 'Volume: 0.00')"
+# Example: "Volume: 0.45 [MUTED]" or "Volume: 0.45"
+IS_MUTED="$(echo "$VOL_RAW" | grep -q '\[MUTED\]' && echo "true" || echo "false")"
+VOL_VAL="$(echo "$VOL_RAW" | awk '{print $2}')"
+VOL_PERCENT="$(awk -v v="$VOL_VAL" 'BEGIN { printf "%.0f", v * 100 }')"
+
+if [ "$IS_MUTED" = "true" ]; then
+  notify-send \
+    -a "Volume" \
+    -h string:x-canonical-private-synchronous:osd-volume \
+    -h int:value:0 \
+    -t 1000 \
+    "Звук: Выключен 󰝟"
+else
+  notify-send \
+    -a "Volume" \
+    -h string:x-canonical-private-synchronous:osd-volume \
+    -h int:value:"$VOL_PERCENT" \
+    -t 1000 \
+    "Громкость: ${VOL_PERCENT}% 󰕾"
+fi

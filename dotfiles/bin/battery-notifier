@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Check if battery exists
+shopt -s nullglob
+BATTERIES=(/sys/class/power_supply/BAT*)
+shopt -u nullglob
+
+if [[ ${#BATTERIES[@]} -eq 0 ]]; then
+    # No battery exists, exit cleanly
+    exit 0
+fi
+
+BAT_PATH="${BATTERIES[0]}"
+
+while true; do
+    if [[ -d "$BAT_PATH" ]]; then
+        CAPACITY=$(cat "$BAT_PATH/capacity" 2>/dev/null || echo "100")
+        STATUS=$(cat "$BAT_PATH/status" 2>/dev/null || echo "Unknown")
+
+        if [[ "$STATUS" == "Discharging" ]]; then
+            if [[ "$CAPACITY" -lt 10 ]]; then
+                notify-send -u critical "Battery Low" "Battery level is critical: ${CAPACITY}%"
+            elif [[ "$CAPACITY" -lt 20 ]]; then
+                notify-send -u critical "Battery Low" "Battery level is low: ${CAPACITY}%"
+            fi
+        fi
+    fi
+    sleep 60
+done

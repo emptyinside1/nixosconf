@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+sleep 0.05
+LAYOUT_JSON="$(niri msg -j keyboard-layouts 2>/dev/null || echo '{}')"
+CURRENT_IDX="$(echo "$LAYOUT_JSON" | jq -r '.current_idx // 0')"
+LAYOUT_NAME="$(echo "$LAYOUT_JSON" | jq -r ".names[$CURRENT_IDX] // \"Unknown\"")"
+
+case "$LAYOUT_NAME" in
+  *"Russian"*) SHORT="RU 🇷🇺" ;;
+  *"English"*) SHORT="EN 🇺🇸" ;;
+  *) SHORT="$LAYOUT_NAME" ;;
+esac
+
+notify-send \
+  -a "Keyboard" \
+  -h string:x-canonical-private-synchronous:keyboard-layout \
+  -t 1000 \
+  "Раскладка: $SHORT" \
+  "$LAYOUT_NAME"

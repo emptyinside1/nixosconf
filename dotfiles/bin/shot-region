@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SAVE_DIR="$HOME/Pictures/Screenshots"
+mkdir -p "$SAVE_DIR"
+
+TIMESTAMP=$(date +'%Y-%m-%d_%H-%M-%S')
+FILE_PATH="$SAVE_DIR/screenshot_${TIMESTAMP}.png"
+
+GEOM=$(slurp)
+if [[ -n "$GEOM" ]]; then
+    grim -g "$GEOM" - | tee "$FILE_PATH" | wl-copy --type image/png
+    notify-send "Screenshot" "Region copied to clipboard & saved to $FILE_PATH"
+fi

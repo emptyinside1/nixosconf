@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+STEP="5%"
+
+case "${1:-}" in
+  up)
+    brightnessctl set "$STEP"+ >/dev/null
+    ;;
+  down)
+    brightnessctl set "$STEP"- >/dev/null
+    ;;
+  *)
+    echo "Usage: $0 {up|down}"
+    exit 1
+    ;;
+esac
+
+BRIGHT_PERCENT="$(brightnessctl -m | awk -F',' '{print $4}' | tr -d '%')"
+
+notify-send \
+  -a "Brightness" \
+  -h string:x-canonical-private-synchronous:osd-brightness \
+  -h int:value:"$BRIGHT_PERCENT" \
+  -t 1000 \
+  "Яркость: ${BRIGHT_PERCENT}% 󰃠"

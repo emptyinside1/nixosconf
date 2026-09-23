@@ -1,0 +1,45 @@
+# Yazi Monochrome / Charcoal Theme
+# Designed for high contrast, clean minimalism and zero saturated colors
+
+[mgr]
+cwd = { fg = "#ffffff", bold = true }
+hovered = { bg = "#2b2b2b", bold = true }
+preview_hovered = { bg = "#2b2b2b" }
+find_keyword = { fg = "#ffffff", bg = "#444444", bold = true }
+find_position = { fg = "#ffffff", bg = "#333333" }
+marker_selected = { fg = "#ffffff", bg = "#333333" }
+marker_copied = { fg = "#aaaaaa", bg = "#222222" }
+marker_cut = { fg = "#777777", bg = "#222222" }
+tab_active = { fg = "#ffffff", bg = "#222222", bold = true }
+tab_inactive = { fg = "#777777", bg = "#111111" }
+count_copied = { fg = "#ffffff", bg = "#333333" }
+count_cut = { fg = "#ffffff", bg = "#333333" }
+count_selected = { fg = "#ffffff", bg = "#333333" }
+border_symbol = "│"
+border_style = { fg = "#333333" }
+
+[status]
+separator_open = ""
+separator_close = ""
+separator_style = { fg = "#333333", bg = "#333333" }
+mode_normal = { fg = "#000000", bg = "#ffffff", bold = true }
+mode_select = { fg = "#ffffff", bg = "#444444", bold = true }
+mode_unset = { fg = "#777777", bg = "#222222", bold = true }
+progress_label = { fg = "#ffffff", bold = true }
+progress_normal = { fg = "#ffffff", bg = "#222222" }
+progress_error = { fg = "#aaaaaa", bg = "#333333" }
+permissions_t = { fg = "#777777" }
+permissions_r = { fg = "#cccccc" }
+permissions_w = { fg = "#aaaaaa" }
+permissions_x = { fg = "#888888" }
+permissions_s = { fg = "#555555" }
+
+[filetype]
+rules = [
+  { mime = "image/*", fg = "#999999" },
+  { mime = "video/*", fg = "#777777" },
+  { mime = "audio/*", fg = "#777777" },
+  { mime = "application/x-bzip*", fg = "#555555" },
+  { mime = "application/zip", fg = "#555555" },
+  { url = "*/", fg = "#888888", bold = true },
+]

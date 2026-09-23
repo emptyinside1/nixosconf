@@ -1,0 +1,83 @@
+{
+  description = "Добавляю в свой конфиг flakes и home-manager.";
+
+  nixConfig = {
+    extra-substituters = [
+      "https://hyprland.cachix.org"
+      "https://nix-community.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
+  };
+
+  inputs = {
+    # Главный источник пакетов
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Источник пакетов unstable.
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    
+    # Home Manager для управления пользовательским окружением
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+    niri = {
+      url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+  };
+
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, zen-browser, niri, nixvim, ... } @inputs:
+  let
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+      config.permittedInsecurePackages = [ "electron-40.10.5" ];
+      overlays = [
+        (final: prev: {
+          stable = import nixpkgs-stable {
+            inherit system;
+            config.allowUnfree = true;
+            config.permittedInsecurePackages = [ "electron-40.10.5" ];
+          };
+        })
+      ];
+    };
+  in
+  {
+    # Конфигурация для машины с именем "nixos"
+    nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
+      inherit system;
+      specialArgs = { inherit inputs; };
+      modules = [
+        { nixpkgs.pkgs = pkgs; }
+        ./hosts/desktop/default.nix  # базовый конфиг системы
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = { inherit inputs zen-browser; };
+          home-manager.users.daniil = import ./modules/home/default.nix;
+          home-manager.backupFileExtension = "backup"; 
+        }
+
+      ];
+    };
+  };
+}
+

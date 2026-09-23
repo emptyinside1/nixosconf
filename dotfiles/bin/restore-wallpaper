@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+STATE_FILE="$HOME/.local/state/current_wallpaper"
+
+if [[ ! -f "$STATE_FILE" ]]; then
+    exit 0
+fi
+
+WALLPAPER=$(cat "$STATE_FILE")
+
+if [[ ! -f "$WALLPAPER" ]]; then
+    exit 0
+fi
+
+if ! pgrep -x awww-daemon >/dev/null; then
+    awww-daemon &
+    sleep 0.5
+fi
+
+awww img "$WALLPAPER" --resize crop --transition-type simple --transition-fps 60

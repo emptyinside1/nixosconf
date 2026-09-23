@@ -1,0 +1,63 @@
+{
+  "layer": "top",
+  "position": "top",
+  "width": 1050,
+  "margin-top": 4,
+  "spacing": 6,
+  "modules-left": [
+    "clock"
+  ],
+  "modules-center": [
+    "niri/workspaces"
+  ],
+  "modules-right": [
+    "mpris",
+    "network",
+    "bluetooth",
+    "backlight",
+    "pulseaudio",
+    "battery"
+  ],
+  "clock": {
+    "format": " {:%H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "niri/workspaces": {
+    "format": "{index}"
+  },
+  "mpris": {
+    "format": "{player_icon} {title}",
+    "format-paused": "{status_icon} <i>{title}</i>",
+    "player-icons": { "default": "▶" },
+    "status-icons": { "paused": "⏸" }
+  },
+  "network": {
+    "format-wifi": "󰤨 {essid}",
+    "format-ethernet": "󰌘 ETH",
+    "format-disconnected": "󰖪 OFFLINE",
+    "on-click": "alacritty -e nmtui"
+  },
+  "bluetooth": {
+    "format": " {status}",
+    "format-connected": "󰂱 {device_alias}",
+    "format-disabled": "󰂳 OFF",
+    "on-click": "blueman-manager"
+  },
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "󰃝", "󰃞", "󰃟", "󰃠"]
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 MUTED",
+    "format-icons": { "default": ["", "", "󰕾", ""] },
+    "on-click": "pavucontrol"
+  },
+  "battery": {
+    "states": { "warning": 30, "critical": 15 },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": "󱘖 {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+  }
+}

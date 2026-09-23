@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+EDITOR_CMD="${EDITOR:-nano}"
+
+declare -A CONFIGS=(
+    ["Flake Configuration"]="$HOME/.nixos/flake.nix"
+    ["Niri Desktop Config"]="$HOME/.config/niri/config.kdl"
+    ["Niri Waybar Config"]="$HOME/.config/niri/waybar/config.jsonc"
+    ["Niri Waybar Style"]="$HOME/.config/niri/waybar/style.css"
+    ["Niri Mako Config"]="$HOME/.config/niri/mako/config"
+    ["Yazi Config"]="$HOME/.config/yazi/yazi.toml"
+    ["Yazi Theme"]="$HOME/.config/yazi/theme.toml"
+    ["Alacritty Config"]="$HOME/.config/alacritty/alacritty.toml"
+    ["Fuzzel Config"]="$HOME/.config/fuzzel/fuzzel.ini"
+    ["Zellij Config"]="$HOME/.config/zellij/config.kdl"
+)
+
+ITEMS=$(printf "%s\n" "${!CONFIGS[@]}" | sort)
+CHOICE=$(echo "$ITEMS" | fuzzel --dmenu --prompt="Edit Config > ")
+
+if [[ -n "$CHOICE" && -n "${CONFIGS[$CHOICE]:-}" ]]; then
+    TARGET="${CONFIGS[$CHOICE]}"
+    alacritty -e "$EDITOR_CMD" "$TARGET"
+fi
