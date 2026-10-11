@@ -10,7 +10,7 @@
 
     Service = {
       Type = "oneshot";
-      ExecStart = "${pkgs.rclone}/bin/rclone sync /home/daniil/Documents gdrive:Documents_Backup --log-file=/home/daniil/Documents/rclone_sync.log --log-level INFO";
+      ExecStart = "${pkgs.rclone}/bin/rclone sync ${config.home.homeDirectory}/Documents gdrive:Documents_Backup --log-file=${config.home.homeDirectory}/Documents/rclone_sync.log --log-level INFO";
     };
   };
 

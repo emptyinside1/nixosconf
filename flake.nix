@@ -60,6 +60,10 @@
     };
   in
   {
+    devShells.${system}.default = pkgs.mkShell {
+      buildInputs = with pkgs; [ iptables nftables systemd iproute2 ];
+    };
+
     # Конфигурация для машины с именем "nixos"
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
       inherit system;

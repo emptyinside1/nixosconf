@@ -17,14 +17,20 @@ let
   menu-windows = pkgs.writeShellScriptBin "menu-windows" (builtins.readFile ../../dotfiles/bin/menu-windows);
   kill-active-process = pkgs.writeShellScriptBin "kill-active-process" (builtins.readFile ../../dotfiles/bin/kill-active-process);
   battery-notifier = pkgs.writeShellScriptBin "battery-notifier" (builtins.readFile ../../dotfiles/bin/battery-notifier);
+  menu-bluetooth = pkgs.writeShellScriptBin "menu-bluetooth" (builtins.readFile ../../dotfiles/bin/menu-bluetooth);
   shot-active = pkgs.writeShellScriptBin "shot-active" (builtins.readFile ../../dotfiles/bin/shot-active);
   dropdown-terminal = pkgs.writeShellScriptBin "dropdown-terminal" (builtins.readFile ../../dotfiles/bin/dropdown-terminal);
   notify-layout = pkgs.writeShellScriptBin "notify-layout" (builtins.readFile ../../dotfiles/bin/notify-layout);
   change-volume = pkgs.writeShellScriptBin "change-volume" (builtins.readFile ../../dotfiles/bin/change-volume);
   change-brightness = pkgs.writeShellScriptBin "change-brightness" (builtins.readFile ../../dotfiles/bin/change-brightness);
+  menu-power-profile = pkgs.writeShellScriptBin "menu-power-profile" (builtins.readFile ../../dotfiles/bin/menu-power-profile);
+  menu-wifi = pkgs.writeShellScriptBin "menu-wifi" (builtins.readFile ../../dotfiles/bin/menu-wifi);
+  menu-audio = pkgs.writeShellScriptBin "menu-audio" (builtins.readFile ../../dotfiles/bin/menu-audio);
+  menu-monitors = pkgs.writeShellScriptBin "menu-monitors" (builtins.readFile ../../dotfiles/bin/menu-monitors);
 in
 {
   home.packages = with pkgs; [
+    bluetuith
     # Core Niri tools & terminal utilities
     alacritty
     fuzzel
@@ -49,6 +55,8 @@ in
     waybar
     pavucontrol
     networkmanagerapplet
+    bluetuith
+    libnotify
 
     # Preview utilities for Yazi
     ffmpegthumbnailer
@@ -69,11 +77,17 @@ in
     menu-windows
     kill-active-process
     battery-notifier
+    menu-bluetooth
     shot-active
     dropdown-terminal
     notify-layout
     change-volume
     change-brightness
+    menu-power-profile
+    (pkgs.writeShellScriptBin "menu-power-profiles" ''exec ${menu-power-profile}/bin/menu-power-profile "$@"'')
+    menu-wifi
+    menu-audio
+    menu-monitors
   ];
 
   # Yazi monochrome configuration

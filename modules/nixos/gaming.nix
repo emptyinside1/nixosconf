@@ -41,8 +41,8 @@
         enableOffloadCmd = true; # Создает скрипт nvidia-offload
       };
       
-      amdgpuBusId = "PCI:5:0:0"; # Впиши ID встройки AMD
-      nvidiaBusId = "PCI:1:0:0"; # Впиши ID дискретки NVIDIA
+      amdgpuBusId = lib.mkDefault "PCI:5:0:0"; # Integrated AMD GPU PCI Bus ID (discover via 'lspci | grep -i vga')
+      nvidiaBusId = lib.mkDefault "PCI:1:0:0"; # Discrete NVIDIA GPU PCI Bus ID (discover via 'lspci | grep -i nvidia')
     };
   };
 

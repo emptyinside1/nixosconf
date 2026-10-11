@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+OPTIONS=("󰖩 [Открыть TUI Менеджер Wi-Fi (nmtui)]" "󰤨 [Включить Wi-Fi]" "󰖪 [Выключить Wi-Fi]")
+
+CHOICE="$(printf "%s\n" "${OPTIONS[@]}" | fuzzel --dmenu --prompt="Wi-Fi > " --width=50 --lines=5)"
+
+case "$CHOICE" in
+  *"[Открыть TUI"*) alacritty -e nmtui & ;;
+  *"[Включить"*) nmcli radio wifi on; notify-send "Wi-Fi включен" ;;
+  *"[Выключить"*) nmcli radio wifi off; notify-send "Wi-Fi выключен" ;;
+esac

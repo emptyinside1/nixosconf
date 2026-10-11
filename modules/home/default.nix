@@ -17,6 +17,7 @@
     ./hyprland.nix
     ./niri.nix
     ./opencode-log-cleaner.nix
+    ./services.nix
     ./rclone-sync.nix
     inputs.zen-browser.homeModules.twilight
     inputs.nixvim.homeModules.nixvim

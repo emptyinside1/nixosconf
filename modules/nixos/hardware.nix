@@ -1,14 +1,15 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
-  hardware.tuxedo-drivers.enable = true;
+  # Enable Tuxedo/Tongfang/Clevo chassis drivers if running on compatible laptop hardware
+  hardware.tuxedo-drivers.enable = lib.mkDefault false;
 
-  # tailord корректно управляет подсветкой через /dev/tuxedo_io
-  hardware.tuxedo-rs.enable = true;
-  hardware.tuxedo-rs.tailor-gui.enable = true;
+  # tailord manages keyboard backlight via /dev/tuxedo_io on Clevo/Tongfang laptops
+  hardware.tuxedo-rs.enable = lib.mkDefault false;
+  hardware.tuxedo-rs.tailor-gui.enable = lib.mkDefault false;
 
-  services.power-profiles-daemon.enable = true;
-  boot.kernelParams = [ "processor.max_cstate=5" "idle=nomwait" ];
+  services.power-profiles-daemon.enable = lib.mkDefault true;
+  boot.kernelParams = lib.mkDefault [ ];
 
   # Асинхронное переключение профилей питания через udev + systemd
   services.udev.extraRules = ''

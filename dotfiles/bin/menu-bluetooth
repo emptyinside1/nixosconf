@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+POWERED="$(bluetoothctl show 2>/dev/null | grep -i "Powered: yes" || true)"
+OPTIONS=()
+
+if [ -z "$POWERED" ]; then
+  OPTIONS+=("󰂲 [Включить Bluetooth]")
+else
+  OPTIONS+=("󰂳 [Выключить Bluetooth]")
+  OPTIONS+=("󰂱 [Запустить TUI менеджер (Bluetuith)]")
+  
+  while read -r _ mac name; do
+    if [ -n "$mac" ]; then
+      CONNECTED="$(bluetoothctl info "$mac" 2>/dev/null | grep -i "Connected: yes" || true)"
+      if [ -n "$CONNECTED" ]; then
+        OPTIONS+=("󰂱 $name ($mac) [Подключено]")
+      else
+        OPTIONS+=("󰂲 $name ($mac)")
+      fi
+    fi
+  done < <(bluetoothctl devices Paired 2>/dev/null || true)
+fi
+
+CHOICE="$(printf "%s
+" "${OPTIONS[@]}" | fuzzel --dmenu --prompt="Bluetooth > " --width=55 --lines=10)"
+
+if [ -z "$CHOICE" ]; then
+  exit 0
+fi
+
+case "$CHOICE" in
+  *"[Включить Bluetooth]"*)
+    bluetoothctl power on
+    notify-send -a "Bluetooth" "Bluetooth включен "
+    ;;
+  *"[Выключить Bluetooth]"*)
+    bluetoothctl power off
+    notify-send -a "Bluetooth" "Bluetooth выключен 󰂲"
+    ;;
+  *"[Запустить TUI менеджер (Bluetuith)]"*)
+    alacritty --class bluetuith-tui -e bluetuith &
+    ;;
+  *)
+    MAC="$(echo "$CHOICE" | grep -o -E '([0-9A-Fa-f]{2}:){5}[0-9A-Fa-f]{2}')"
+    NAME="$(echo "$CHOICE" | sed -E 's/^[󰂱󰂲] //; s/ \([0-9A-Fa-f:].*//')"
+    if [ -n "$MAC" ]; then
+      if echo "$CHOICE" | grep -q "\[Подключено\]"; then
+        bluetoothctl disconnect "$MAC"
+        notify-send -a "Bluetooth" "Отключено: $NAME"
+      else
+        notify-send -a "Bluetooth" "Подключение к $NAME..."
+        if bluetoothctl connect "$MAC"; then
+          notify-send -a "Bluetooth" "Успешно подключено: $NAME 󰂱"
+        else
+          notify-send -u critical -a "Bluetooth" "Ошибка подключения к $NAME"
+        fi
+      fi
+    fi
+    ;;
+esac

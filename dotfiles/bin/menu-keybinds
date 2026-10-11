@@ -3,7 +3,6 @@ set -euo pipefail
 
 KEYBINDS=$(cat << 'EOF'
 Mod + Space            Switch keyboard layout (us/ru)
-Right Alt (Hold)        OpenVoice Push-To-Talk
 Mod + Return           Terminal (Alacritty)
 Mod + E                File Manager (Yazi in Alacritty)
 Mod + D                App Launcher (Fuzzel)
@@ -14,6 +13,8 @@ Mod + , / .            consume-window-into-column / expel-window-from-column
 Mod + Ctrl + Up/Down   Move window up/down within column
 Mod + Shift + Arrows   Resize window / set-column-width / set-window-height
 Mod + Ctrl + Arrows    Move window/column (move-column-left/right)
+Mod + Alt + Left/Right/H/L Focus monitor (Left/Right)
+Mod + Alt + Shift + Left/Right/H/L Move column to monitor (Left/Right)
 Mod + Q                Close window
 Mod + Shift + C        Center column
 Mod + R                Cycle column width presets (1/3, 1/2, 2/3, full)
@@ -29,6 +30,8 @@ Mod + Shift + 1..9     Move column to workspace 1..9
 Ctrl+Alt+P / Mod+Shift+E / Mod+Escape  Power menu (menu-power)
 Mod + Alt + V          Clipboard history (menu-clipboard)
 Mod + S                Web search (menu-websearch)
+Mod + P                Power profile selector (menu-power-profile)
+Mod + Shift + P        Monitors toggle menu (menu-monitors)
 Mod + Ctrl + S         Switch window menu (menu-windows)
 Mod + Shift + Q        Force kill active process (kill-active-process)
 Mod + ` (grave)        Toggle dropdown terminal

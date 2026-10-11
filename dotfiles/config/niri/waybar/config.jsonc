@@ -35,13 +35,19 @@
     "format-wifi": "󰤨 {essid}",
     "format-ethernet": "󰌘 ETH",
     "format-disconnected": "󰖪 OFFLINE",
-    "on-click": "alacritty -e nmtui"
+    "on-click": "alacritty -e nmtui",
+    "on-click-right": "menu-wifi"
   },
   "bluetooth": {
     "format": " {status}",
     "format-connected": "󰂱 {device_alias}",
     "format-disabled": "󰂳 OFF",
-    "on-click": "blueman-manager"
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "alacritty --class bluetuith-tui -e bluetuith",
+    "on-click-right": "menu-bluetooth",
+    "on-click-middle": "rfkill toggle bluetooth"
   },
   "backlight": {
     "format": "{icon} {percent}%",
@@ -51,13 +57,16 @@
     "format": "{icon} {volume}%",
     "format-muted": "󰖁 MUTED",
     "format-icons": { "default": ["", "", "󰕾", ""] },
-    "on-click": "pavucontrol"
+    "on-click": "pavucontrol",
+    "on-click-right": "menu-audio"
   },
   "battery": {
     "states": { "warning": 30, "critical": 15 },
     "format": "{icon} {capacity}%",
     "format-charging": " {capacity}%",
     "format-plugged": "󱘖 {capacity}%",
-    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "on-click": "menu-power-profile",
+    "on-click-right": "menu-power-profile"
   }
 }

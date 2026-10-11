@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+OPTIONS=("󰕾 [Открыть менеджер звука (pavucontrol)]")
+SINKS="$(wpctl status | grep -A 10 "Sinks:" | sed -n '/Sinks:/,$p' | grep -m1 -B10 "Sink endpoints" || true)"
+
+# Note: this is a simple fallback. Full pavucontrol is standard.
+CHOICE="$(printf "%s\n" "${OPTIONS[@]}" | fuzzel --dmenu --prompt="Audio > " --width=50 --lines=5)"
+
+case "$CHOICE" in
+  *"pavucontrol"*) pavucontrol & ;;
+esac

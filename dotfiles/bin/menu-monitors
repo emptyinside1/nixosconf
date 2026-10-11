@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+OUTPUTS="$(niri msg -j outputs | jq -r '.[] | "\(.name) - \(.make) \(.model) [\(if .is_active then "ON" else "OFF" end)]"')"
+CHOICE="$(echo "$OUTPUTS" | fuzzel --dmenu --prompt="Monitors > " --width=60 --lines=6)"
+
+if [ -n "$CHOICE" ]; then
+  NAME="$(echo "$CHOICE" | awk '{print $1}')"
+  niri msg action toggle-output "$NAME"
+  notify-send "Monitor toggled" "$NAME"
+fi

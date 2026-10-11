@@ -46,5 +46,6 @@
     xwayland-satellite
     brightnessctl
     playerctl
+    power-profiles-daemon
   ];
 }

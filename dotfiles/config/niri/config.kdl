@@ -3,16 +3,26 @@
 
 prefer-no-csd
 
-output "eDP-2" {
-    mode "2560x1440@165.000"
+hotkey-overlay {
+    skip-at-startup
+}
+
+output "eDP-1" {
+    mode "2560x1440@165.003"
     scale 1.0
+    position x=0 y=0
     variable-refresh-rate
 }
-output "eDP-1" {
+output "eDP-2" {
+    mode "2560x1440@165.003"
     scale 1.0
+    position x=0 y=0
+    variable-refresh-rate
 }
 output "HDMI-A-1" {
+    mode "1920x1080@74.986"
     scale 1.0
+    position x=2560 y=0
 }
 output "DP-1" {
     scale 1.0
@@ -43,7 +53,7 @@ input {
 layout {
     gaps 10
     center-focused-column "never"
-    default-column-width { proportion 0.33333; }
+    default-column-width { proportion 0.5; }
     preset-column-widths {
         proportion 0.33333
         proportion 0.5
@@ -85,6 +95,11 @@ window-rule {
 }
 
 window-rule {
+    match app-id="^bluetuith-tui$"
+    open-floating true
+}
+
+window-rule {
     match app-id="^dota2$"
     match app-id="^steam_app_"
     match app-id="^gamescope$"
@@ -116,12 +131,11 @@ spawn-at-startup "sh" "-c" "waybar -c $HOME/.config/niri/waybar/config.jsonc -s 
 spawn-at-startup "sh" "-c" "pkill -9 swaync 2>/dev/null || true; mako -c $HOME/.config/niri/mako/config"
 spawn-at-startup "sh" "-c" "awww-daemon &"
 spawn-at-startup "restore-wallpaper"
-spawn-at-startup "sh" "-c" "[ -x /home/daniil/.local/bin/openvoice-daemon.sh ] && sleep 3 && env WAYLAND_DISPLAY=wayland-1 DISPLAY=:0 /home/daniil/.local/bin/openvoice-daemon.sh &"
-spawn-at-startup "sh" "-c" "/run/current-system/sw/libexec/polkit-gnome-authentication-agent-1 &"
-spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
-spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+// Managed via systemd user services:
+// - polkit-gnome-agent
+// - cliphist-text / cliphist-image
+// - battery-notifier
 spawn-at-startup "nm-applet" "--indicator"
-spawn-at-startup "sh" "-c" "battery-notifier &"
 
 binds {
     // Mouse wheel navigation
@@ -137,6 +151,7 @@ binds {
     Mod+E { spawn "alacritty" "-e" "yazi"; }
     Mod+D { spawn "fuzzel"; }
     Mod+Shift+Space { toggle-window-floating; }
+    Mod+Shift+B { spawn "alacritty" "--class" "bluetuith-tui" "-e" "bluetuith"; }
     Mod+B { spawn "xdg-open" "https://"; }
 
     // Column stacking & vertical management
@@ -148,6 +163,8 @@ binds {
     Mod+Ctrl+Up { move-window-up; }
 
     // Menus and Scripts
+    Mod+Shift+P { spawn "menu-monitors"; }
+    Mod+P { spawn "menu-power-profile"; }
     Mod+Alt+V { spawn "menu-clipboard"; }
     Mod+S { spawn "menu-websearch"; }
     Mod+Ctrl+S { spawn "menu-windows"; }
@@ -191,6 +208,18 @@ binds {
     Mod+Ctrl+Left { move-column-left; }
     Mod+Ctrl+Right { move-column-right; }
 
+    // Multi-Monitor Focus & Navigation (Collision-Free per AC_16)
+    Mod+Alt+Left { focus-monitor-left; }
+    Mod+Alt+Right { focus-monitor-right; }
+    Mod+Alt+H { focus-monitor-left; }
+    Mod+Alt+L { focus-monitor-right; }
+
+    // Multi-Monitor Column Migration
+    Mod+Alt+Shift+Left { move-column-to-monitor-left; }
+    Mod+Alt+Shift+Right { move-column-to-monitor-right; }
+    Mod+Alt+Shift+H { move-column-to-monitor-left; }
+    Mod+Alt+Shift+L { move-column-to-monitor-right; }
+
     // Resize on Shift+Arrows
     Mod+Shift+Left { set-column-width "-10%"; }
     Mod+Shift+Right { set-column-width "+10%"; }
@@ -232,9 +261,9 @@ binds {
     XF86MonBrightnessDown allow-when-locked=true { spawn "change-brightness" "down"; }
     XF86KbdBrightnessUp { spawn "brightnessctl" "--device=*kbd*" "set" "1+"; }
     XF86KbdBrightnessDown { spawn "brightnessctl" "--device=*kbd*" "set" "1-"; }
-    XF86Launch1 { spawn "sh" "-c" "command -v rog-control-center >/dev/null && rog-control-center || true"; }
-    XF86Launch3 { spawn "sh" "-c" "command -v asusctl >/dev/null && asusctl led-mode -n || true"; }
-    XF86Launch4 { spawn "sh" "-c" "command -v asusctl >/dev/null && asusctl profile -n || true"; }
+    XF86Launch1 { spawn "tailor-gui"; }
+    XF86Launch3 { spawn "true"; }
+    XF86Launch4 { spawn "true"; }
     XF86Rfkill { spawn "sh" "-c" "rfkill block all || rfkill unblock all"; }
 
     // Screenshots

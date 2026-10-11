@@ -75,13 +75,13 @@ in
     overrideFolders = true;     # Применяет настройки папок из конфига
     settings = {
       devices = {
-        "phone" = { id = "5SHMTFT-TQYJIWY-RN2P6YJ-QYYIZPR-V43YROM-CJLCY34-RLNDORS-GASPFAZ"; };
+        "example-device" = { id = "EXAMPLE-DEVICE-0000000-0000000-0000000-0000000-0000000-0000000"; };
       };
       folders = {
-        "wl7z3-ishy7" = {
-          path = "${config.home.homeDirectory}/Documents/Obs";
-          label = "Obs";
-          devices = [ "phone" ]; # Синхронизировать с телефоном
+        "notes" = {
+          path = "${config.home.homeDirectory}/Documents/Notes";
+          label = "Notes";
+          devices = [ "example-device" ];
         };
       };
     };

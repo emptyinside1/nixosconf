@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
+    (if builtins.pathExists ./hardware-configuration.nix then ./hardware-configuration.nix else ./hardware-configuration.nix.example)
     ../../modules/nixos/hardware.nix
     ../../modules/nixos/gaming.nix
     ../../modules/nixos/networking.nix

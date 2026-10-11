@@ -1,36 +1,36 @@
 {
     "label" : "lock",
-    "action" : "/home/daniil/.config/wlogout/action.sh lock",
+    "action" : "$HOME/.config/wlogout/action.sh lock",
     "text" : "Lock",
     "keybind" : "l"
 }
 {
     "label" : "reboot",
-    "action" : "/home/daniil/.config/wlogout/action.sh reboot",
+    "action" : "$HOME/.config/wlogout/action.sh reboot",
     "text" : "Reboot",
     "keybind" : "r"
 }
 {
     "label" : "shutdown",
-    "action" : "/home/daniil/.config/wlogout/action.sh shutdown",
+    "action" : "$HOME/.config/wlogout/action.sh shutdown",
     "text" : "Shutdown",
     "keybind" : "s"
 }
 {
     "label" : "logout",
-    "action" : "/home/daniil/.config/wlogout/action.sh logout",
+    "action" : "$HOME/.config/wlogout/action.sh logout",
     "text" : "Logout",
     "keybind" : "e"
 }
 {
     "label" : "suspend",
-    "action" : "/home/daniil/.config/wlogout/action.sh suspend",
+    "action" : "$HOME/.config/wlogout/action.sh suspend",
     "text" : "Suspend",
     "keybind" : "u"
 }
 {
     "label" : "hibernate",
-    "action" : "/home/daniil/.config/wlogout/action.sh hibernate",
+    "action" : "$HOME/.config/wlogout/action.sh hibernate",
     "text" : "Hibernate",
     "keybind" : "h"
 }

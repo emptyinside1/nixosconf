@@ -7,7 +7,15 @@ result
 result-*
 
 # ---- Аппаратная конфигурация (содержит UUID дисков) ----
-# hardware-configuration.nix
+hardware-configuration.nix
+!hardware-configuration.nix.example
+
+# ---- Аппаратные дампы ----
+lshw.txt
+lsusb.txt
+
+# ---- Worktrees ----
+.worktrees/
 
 # ---- Старый бэкап конфига (111 МБ) ----
 .nixos-old-backup/

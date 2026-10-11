@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if ! command -v powerprofilesctl >/dev/null 2>&1; then
+  if command -v notify-send >/dev/null 2>&1; then
+    notify-send -a "Power" -u critical "Error" "powerprofilesctl not found. Please install power-profiles-daemon."
+  fi
+  echo "Error: powerprofilesctl is not installed or not in PATH." >&2
+  exit 0
+fi
+
+CURRENT="$(powerprofilesctl get || echo 'unknown')"
+
+OPTIONS=(
+  "🚀 Performance"
+  "⚖️ Balanced"
+  "🍃 Power-saver"
+)
+
+CHOICE="$(printf "%s\n" "${OPTIONS[@]}" | fuzzel --dmenu --prompt="Power Profile (current: $CURRENT) > " --width=35 --lines=4 || true)"
+[ -z "$CHOICE" ] && exit 0
+
+case "$CHOICE" in
+  *"Performance"*)
+    powerprofilesctl set performance
+    notify-send -a "Power" "Power Profile: Performance 🚀"
+    ;;
+  *"Balanced"*)
+    powerprofilesctl set balanced
+    notify-send -a "Power" "Power Profile: Balanced ⚖️"
+    ;;
+  *"Power-saver"*)
+    powerprofilesctl set power-saver
+    notify-send -a "Power" "Power Profile: Power-saver 🍃"
+    ;;
+esac
